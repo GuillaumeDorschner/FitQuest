@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/design_default_color_background"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageButton
+            android:id="@+id/ButtonHome"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:scaleType="fitCenter"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Bouton de navigation page home" />
+
+        <ImageButton
+            android:id="@+id/ButtonActivity"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_dumbbell"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:contentDescription="Bouton de navigation page activité" />
+
+        <ImageButton
+            android:id="@+id/ButtonNewActivity"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_input_add"
+            android:scaleType="fitCenter"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Bouton de navigation page pour ajouter un nouvel exo" />
+
+        <ImageButton
+            android:id="@+id/ButtonFavoris"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_favoris"
+            android:scaleType="fitCenter"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Bouton de navigation page des exos favoris" />
+
+        <ImageButton
+            android:id="@+id/ButtonProfil"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_account"
+            android:scaleType="fitCenter"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Bouton de navigation page compte" />
+    </LinearLayout>
+</RelativeLayout>
