@@ -1,6 +1,7 @@
 package com.example.workout
 
 import androidx.appcompat.app.AppCompatActivity
+import com.example.workout.databinding.ActivityMainBinding
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
