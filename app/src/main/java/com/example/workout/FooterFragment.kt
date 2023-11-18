@@ -1,3 +1,4 @@
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import com.example.workout.R
 
 class FooterFragment : Fragment() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -17,7 +19,7 @@ class FooterFragment : Fragment() {
 
         val homeButton: ImageButton = view.findViewById(R.id.ButtonHome)
         val activityButton: ImageButton = view.findViewById(R.id.ButtonActivity)
-        val newActivityButton: ImageButton = view.findViewById(R.id.ButtonNewActivity)
+        val newWorkoutButton: ImageButton = view.findViewById(R.id.ButtonNewWorkout)
         val favoritesButton: ImageButton = view.findViewById(R.id.ButtonFavoris)
         val profileButton: ImageButton = view.findViewById(R.id.ButtonProfil)
 
@@ -29,8 +31,8 @@ class FooterFragment : Fragment() {
             showToast("Activity Button Clicked")
         }
 
-        newActivityButton.setOnClickListener {
-            showToast("New Activity Button Clicked")
+        newWorkoutButton.setOnClickListener {
+            showToast("New Workout Button Clicked")
         }
 
         favoritesButton.setOnClickListener {

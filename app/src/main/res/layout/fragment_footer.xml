@@ -21,8 +21,7 @@
             android:layout_weight="1"
             android:src="@drawable/ic_home"
             android:scaleType="fitCenter"
-            android:background="?android:attr/selectableItemBackground"
-            android:contentDescription="Bouton de navigation page home" />
+            android:background="?android:attr/selectableItemBackground"/>
 
         <ImageButton
             android:id="@+id/ButtonActivity"
@@ -32,18 +31,16 @@
             android:background="?android:attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_dumbbell"
-            tools:ignore="SpeakableTextPresentCheck"
-            android:contentDescription="Bouton de navigation page activité" />
+            tools:ignore="SpeakableTextPresentCheck"/>
 
         <ImageButton
-            android:id="@+id/ButtonNewActivity"
+            android:id="@+id/ButtonNewWorkout"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
             android:src="@android:drawable/ic_input_add"
             android:scaleType="fitCenter"
-            android:background="?android:attr/selectableItemBackground"
-            android:contentDescription="Bouton de navigation page pour ajouter un nouvel exo" />
+            android:background="?android:attr/selectableItemBackground"/>
 
         <ImageButton
             android:id="@+id/ButtonFavoris"
@@ -52,8 +49,7 @@
             android:layout_weight="1"
             android:src="@drawable/ic_favoris"
             android:scaleType="fitCenter"
-            android:background="?android:attr/selectableItemBackground"
-            android:contentDescription="Bouton de navigation page des exos favoris" />
+            android:background="?android:attr/selectableItemBackground"/>
 
         <ImageButton
             android:id="@+id/ButtonProfil"
@@ -62,7 +58,6 @@
             android:layout_weight="1"
             android:src="@drawable/ic_account"
             android:scaleType="fitCenter"
-            android:background="?android:attr/selectableItemBackground"
-            android:contentDescription="Bouton de navigation page compte" />
+            android:background="?android:attr/selectableItemBackground"/>
     </LinearLayout>
 </RelativeLayout>
