@@ -1,9 +1,10 @@
 package com.example.workout
 
+import FooterFragment
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
+import androidx.fragment.app.FragmentTransaction
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("WrongViewCast")
@@ -11,10 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val imageViewHome = findViewById<ImageView>(R.id.ButtonHome)
-        val imageViewActivity = findViewById<ImageView>(R.id.ButtonActivity)
-        val imageViewNewActivity = findViewById<ImageView>(R.id.ButtonNewActivity)
-        val imageViewFavoris = findViewById<ImageView>(R.id.ButtonFavoris)
-        val imageViewProfil = findViewById<ImageView>(R.id.ButtonProfil)
+        // Charger le FooterFragment dans le conteneur
+        val fragmentFooter: FragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentFooter.replace(R.id.footerContainer, FooterFragment())
+        fragmentFooter.commit()
+
     }
 }
