@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:padding="8dp"
+    android:background="@drawable/rounded_corner">
+
+    <TextView
+        android:id="@+id/tvTodaysActivityTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Today's Activities"
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/tvTodaysActivityDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Body weight"
+        android:padding="8dp"
+        android:layout_below="@id/tvTodaysActivityTitle"
+        android:textColor="@android:color/white"
+        android:textSize="15dp" />
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_below="@id/tvTodaysActivityDesc"
+    android:weightSum="3">
+
+        <TextView
+            android:id="@+id/tvCalories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1200 kcal"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvHeartRate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="90 bpm"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2 h 40"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</RelativeLayout>
