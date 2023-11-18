@@ -20,7 +20,7 @@ data class CurrentOpenIAResponse(
 	val choices: List<ChoicesItem?>? = null,
 
 	@field:SerializedName("object")
-	val object: String? = null
+	val `object`: String? = null
 )
 
 data class ChoicesItem(
