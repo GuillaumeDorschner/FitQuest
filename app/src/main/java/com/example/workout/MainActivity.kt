@@ -8,8 +8,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val headerComponent = findViewById<HeaderComponent>(R.id.headerComponent)
+        val headerFragment = supportFragmentManager.findFragmentById(R.id.headerFragment) as? HeaderFragment
         val imageUrl = "https://thispersondoesnotexist.com/"
-        headerComponent.setUserImage(imageUrl)
+        headerFragment?.setUserImage(imageUrl)
     }
 }
