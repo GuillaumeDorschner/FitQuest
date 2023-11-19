@@ -1,12 +1,11 @@
 package com.example.workout.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.liveData
 import com.example.workout.model.CurrentOpenIARequest
 import com.example.workout.model.CurrentOpenIAResponse
 import com.example.workout.networking.ApiService
-import kotlinx.coroutines.Dispatchers
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,19 +23,28 @@ class WorkoutViewModel(private val apiService: ApiService) : ViewModel() {
                 response: Response<CurrentOpenIAResponse>
             ) {
                 if (response.isSuccessful && response.body() != null) {
+
                     workoutResponse.value = response.body()
+                    // Log the successful response
+                    Log.d("WorkoutViewModel", "Response: ${response.body()}")
                 } else {
                     onError("Error: Response unsuccessful")
+                    // Log the error response
+                    Log.e("WorkoutViewModel", "Unsuccessful response: ${response.errorBody()?.string()}")
                 }
             }
 
             override fun onFailure(call: Call<CurrentOpenIAResponse>, t: Throwable) {
                 onError("Error: ${t.localizedMessage}")
+                // Log the failure
+                Log.e("WorkoutViewModel", "API Call Failed: ${t.localizedMessage}")
             }
         })
     }
 
     private fun onError(message: String) {
         errorMessage.value = message
+        // Log the error message
+        Log.e("WorkoutViewModel", "Error: $message")
     }
 }
