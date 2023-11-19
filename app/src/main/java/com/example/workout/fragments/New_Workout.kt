@@ -1,15 +1,14 @@
 package com.example.workout.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.workout.R
 import com.example.workout.databinding.FragmentNewWorkoutBinding
-import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.model.CurrentOpenIARequest
 import com.example.workout.model.MessagesItem
 import com.example.workout.networking.ApiConfig
