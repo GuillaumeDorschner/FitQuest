@@ -59,5 +59,15 @@
                 android:background="@color/vertVif"/>
         </androidx.cardview.widget.CardView>
 
+
+        <TextView
+            android:id="@+id/response"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewId"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="..."
+            android:textSize="24sp"/>
     </RelativeLayout>
 </layout>
