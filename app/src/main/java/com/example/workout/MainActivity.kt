@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.workout.databinding.ActivityMainBinding
 import com.example.workout.fragments.*
-import com.example.workout.fragments.New_Workout
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("WrongViewCast")
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> replaceFragment(Home())
                 R.id.activity -> replaceFragment(Home())
-                R.id.new_workout -> replaceFragment(New_Workout())
+                R.id.new_workout -> replaceFragment(Home())
                 R.id.favorites -> replaceFragment(Home())
                 R.id.account -> replaceFragment(Home())
 
