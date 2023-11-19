@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"/>
+
+    <item android:title="Activity"
+        android:id="@+id/activity"
+        android:icon="@drawable/ic_stats"/>
+
+    <item android:title="New Workout"
+        android:id="@+id/new_workout"
+        android:icon="@drawable/ic_magnify"/>
+
+    <item android:title="Favorites"
+        android:id="@+id/favorites"
+        android:icon="@drawable/ic_heart"/>
+
+    <item android:title="Account"
+        android:id="@+id/account"
+        android:icon="@drawable/ic_account"/>
+</menu>
