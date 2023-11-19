@@ -1,25 +1,31 @@
-package com.example.workout
+package com.example.workout.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.workout.databinding.FragmentPageNewWorkoutBinding
-import com.example.workout.viewmodel.WorkoutViewModel
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.workout.R
+import com.example.workout.databinding.FragmentNewWorkoutBinding
 import com.example.workout.model.CurrentOpenIARequest
+import com.example.workout.model.MessagesItem
+import com.example.workout.viewmodel.WorkoutViewModel
 
-class fragment_page_new_workout : Fragment() {
-    private lateinit var binding: FragmentPageNewWorkoutBinding
+class New_Workout : Fragment(){
+    private lateinit var binding: FragmentNewWorkoutBinding
     private lateinit var viewModel: WorkoutViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_page_new_workout, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_new_workout, container, false)
         viewModel = ViewModelProvider(this).get(WorkoutViewModel::class.java)
         binding.workoutViewModel = viewModel
 
-        binding.buttonRun.setOnClickListener {
-            val userInput = binding.editTextWorkout.text.toString()
+        val runSearch = binding.viewId
+
+        runSearch.setOnClickListener {
+            val userInput = binding.inputUsr.text.toString()
 
             val systemMessage = MessagesItem(
                 role = "system",
@@ -42,3 +48,4 @@ class fragment_page_new_workout : Fragment() {
         return binding.root
     }
 }
+
