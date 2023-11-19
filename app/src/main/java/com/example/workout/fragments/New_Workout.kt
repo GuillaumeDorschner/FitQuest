@@ -12,6 +12,7 @@ import com.example.workout.databinding.FragmentNewWorkoutBinding
 import com.example.workout.model.CurrentOpenIARequest
 import com.example.workout.model.MessagesItem
 import com.example.workout.networking.ApiConfig
+import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
 
 
@@ -36,7 +37,7 @@ class New_Workout : Fragment() {
         viewModel = ViewModelProvider(this)[WorkoutViewModel::class.java]
         binding.workoutViewModel = viewModel
 
-        binding.viewId.setOnClickListener {
+        binding.searchButton.setOnClickListener {
             val userInput = binding.inputUsr.text.toString()
 
             val systemMessage = MessagesItem(
