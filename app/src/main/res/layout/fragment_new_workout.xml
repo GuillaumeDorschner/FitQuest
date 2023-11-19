@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -8,66 +9,106 @@
             type="com.example.workout.viewmodel.WorkoutViewModel" />
     </data>
 
-    <RelativeLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.New_Workout">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create your workout"
-            android:textSize="30sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"/>
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragments.New_Workout">
 
-        <TextView
-            android:id="@+id/question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:text="What do you want to do ?"
-            android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Create your workout"
+                android:textSize="30sp" />
 
-        <EditText
-            android:id="@+id/inputUsr"
-            android:layout_width="350dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/question"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/search_bar_view"
-            android:hint="Keyword (muscles)"/>
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:text="What do you want to do ?"
+                android:textSize="24sp"/>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/viewId"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="365dp"
-            android:layout_marginTop="14dp"
-            android:layout_below="@id/question"
-            app:cardCornerRadius="5dp">
+            <EditText
+                android:id="@+id/inputUsr"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/question"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/search_bar_view"
+                android:hint="Keyword (muscles)"/>
 
-            <ImageView
-                android:id="@+id/searchIcon"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/viewId"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="365dp"
+                android:layout_marginTop="14dp"
+                android:layout_below="@id/question"
+                app:cardCornerRadius="5dp">
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_search_white"
+                    android:background="@color/vertVif"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/response"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_search_white"
-                android:background="@color/vertVif"/>
-        </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewId"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:text="..."
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/response1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewId"
+                android:layout_marginTop="300dp"
+                android:layout_marginStart="10dp"
+                android:text="..."
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/response2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/response1"
+                android:layout_marginTop="300dp"
+                android:layout_marginStart="10dp"
+                android:text="..."
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/response3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/response2"
+                android:layout_marginTop="300dp"
+                android:layout_marginStart="10dp"
+                android:text="..."
+                android:textSize="24sp"/>
 
 
-        <TextView
-            android:id="@+id/response"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/viewId"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:text="..."
-            android:textSize="24sp"/>
-    </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
 </layout>
