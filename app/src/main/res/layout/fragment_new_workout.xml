@@ -64,7 +64,7 @@
                 android:background="@drawable/rounded_corner_green"/>
 
             <TextView
-                android:id="@+id/result"
+                android:id="@+id/response"
                 android:layout_width="400dp"
                 android:layout_height="490dp"
                 android:layout_below="@id/searchButton"
@@ -80,58 +80,13 @@
                 android:id="@+id/saveButton"
                 android:layout_width="400dp"
                 android:layout_height="40dp"
-                android:layout_below="@id/result"
+                android:layout_below="@id/response"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:src="@drawable/ic_heart"
                 android:background="@drawable/rounded_corner_red"
                 android:onClick="onSaveButtonClick"/>
-
-
-                <TextView
-                    android:id="@+id/response"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/searchButton"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="12dp"
-                    android:text="..."
-                    android:fontFamily="sans-serif"
-                    android:textSize="24sp"/>
-
-                <TextView
-                    android:id="@+id/response1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/response"
-                    android:layout_marginTop="300dp"
-                    android:layout_marginStart="12dp"
-                    android:text="..."
-                    android:fontFamily="sans-serif"
-                    android:textSize="24sp"/>
-
-                <TextView
-                    android:id="@+id/response2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/response1"
-                    android:layout_marginTop="300dp"
-                    android:layout_marginStart="12dp"
-                    android:text="..."
-                    android:fontFamily="sans-serif"
-                    android:textSize="24sp"/>
-
-                <TextView
-                    android:id="@+id/response3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/response2"
-                    android:layout_marginTop="300dp"
-                    android:layout_marginStart="12dp"
-                    android:text="..."
-                    android:fontFamily="sans-serif"
-                    android:textSize="24sp"/>
 
         </RelativeLayout>
     </ScrollView>
