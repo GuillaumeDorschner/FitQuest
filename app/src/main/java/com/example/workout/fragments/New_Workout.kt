@@ -37,7 +37,7 @@ class New_Workout : Fragment() {
             val request = CurrentOpenIARequest(
                 model = "gpt-4",
                 messages = listOf(
-                    MessagesItem(role = "system", content = "Your system message"),
+                    MessagesItem(role = "system", content = "You are a fitness assistant, skilled in creating personalized workout programs. Create a programme perfectly suited to the user's level {beginner, intermediate, exper}. Choose the number of training days per week. Focus on these body parts/muscles: {user message}. If the target has nothing to do with bodybuilding, reply: I'm afraid I can't help you with that. Let's stay focused on bodybuilding."),
                     MessagesItem(role = "user", content = userInput)
                 )
             )

@@ -63,11 +63,24 @@
                 android:layout_below="@id/question"
                 android:background="@drawable/rounded_corner_green"/>
 
+            <ImageButton
+                android:id="@+id/saveButton"
+                android:layout_centerHorizontal="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/searchButton"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_heart"
+                android:background="@drawable/rounded_corner_red"
+                android:onClick="onSaveButtonClick"/>
+
             <TextView
                 android:id="@+id/response"
                 android:layout_width="400dp"
                 android:layout_height="490dp"
-                android:layout_below="@id/searchButton"
+                android:layout_below="@id/saveButton"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="10dp"
                 android:background="@drawable/search_bar_view"
@@ -75,18 +88,6 @@
                 android:fontFamily="sans-serif"
                 android:textSize="18sp"
                 android:layout_marginEnd="10dp"/>
-
-            <ImageButton
-                android:id="@+id/saveButton"
-                android:layout_width="400dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/response"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/ic_heart"
-                android:background="@drawable/rounded_corner_red"
-                android:onClick="onSaveButtonClick"/>
 
         </RelativeLayout>
     </ScrollView>
