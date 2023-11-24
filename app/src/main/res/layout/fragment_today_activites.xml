@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:padding="8dp"
-    android:background="@drawable/rounded_corner">
+    android:background="@drawable/roundstyle">
 
     <TextView
         android:id="@+id/tvTodaysActivityTitle"
