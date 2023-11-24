@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
+                android:textColor="?attr/colorPrimary"
                 android:text="Create your workout"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -52,19 +53,21 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:layout_marginEnd="10dp"
-                    android:background="@drawable/search_bar_view"
                     android:fontFamily="sans-serif"
                     android:padding="12dp"
-                    android:textColor="#000000"
+                    android:textColor="?attr/colorPrimary"
+                    android:background="@drawable/roundstyle"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
                     android:textSize="14dp"
-                    android:backgroundTint="#F3F3F3"
-                    android:hint="Keyword (muscles)" />
+                    android:hint="Keyword (muscles)"
+                    android:textColorHint="?attr/colorPrimary"/>
 
                 <ImageButton
                     android:id="@+id/searchButton"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/rounded_corner_green"
+                    android:background="@drawable/roundstyle"
+                    android:backgroundTint="?attr/colorSecondary"
                     android:src="@drawable/ic_search_white" />
 
             </LinearLayout>
@@ -76,10 +79,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:fontFamily="sans-serif"
+                android:textColor="?attr/colorPrimary"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="?attr/colorPrimaryVariant"
                 android:hint="Personal coach program..."
+                android:textColorHint="?attr/colorPrimary"
                 android:padding="12dp"
-                android:textColor="#000000"
-                android:background="#F3F3F3"
                 android:textSize="18sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -91,7 +96,8 @@
                     android:layout_width="140dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/rounded_corner_red"
+                    android:background="@drawable/roundstyle"
+                    android:backgroundTint="?attr/colorError"
                     android:onClick="onSaveButtonClick"
                     android:src="@drawable/ic_heart"
                     app:layout_constraintEnd_toEndOf="parent"
