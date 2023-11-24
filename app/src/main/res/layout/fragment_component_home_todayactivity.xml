@@ -56,7 +56,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paintFlags="underline_text_flag"
             android:text="Add a training +"
             android:textColor="@color/text_link"
             android:textSize="14sp" />
