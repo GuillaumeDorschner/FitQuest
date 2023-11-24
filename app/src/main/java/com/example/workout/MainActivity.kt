@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.home -> replaceFragment(Home())
-                R.id.activity -> replaceFragment(Activity())
+                R.id.activity -> replaceFragment(Home())
                 R.id.new_workout -> replaceFragment(New_Workout())
                 R.id.favorites -> replaceFragment(Home())
                 R.id.account -> replaceFragment(Home())

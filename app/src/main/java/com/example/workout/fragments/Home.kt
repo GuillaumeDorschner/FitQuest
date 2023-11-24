@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.workout.R
+import com.example.workout.adapter.CardsPopularAdapter
+import com.example.workout.model.CardPopular
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,9 +37,22 @@ class Home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        val cardsList = listOf(
+            CardPopular("Cbum", R.drawable.cbum, "https://www.instagram.com/cbum/"),
+            CardPopular("Tibo Inshape", R.drawable.tibo, "https://www.youtube.com/user/OutLawzFR"),
+            CardPopular("Arnold", R.drawable.arnold, "https://fr.wikipedia.org/wiki/Arnold_Schwarzenegger"),
+            // CardPopular("Mike Mentzers", R.drawable.mike, "https://fr.wikipedia.org/wiki/Mike_Mentzer"),
+        )
+
+        val adapter = CardsPopularAdapter(requireContext(), cardsList)
+        view.findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter
+
+        return view
     }
+
 
     companion object {
         /**
