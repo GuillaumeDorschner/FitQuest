@@ -60,7 +60,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation ("androidx.navigation:navigation-ui-ktx:2.3.5")
-    implementation ("com.google.android.material:material:1.1.0")
+    implementation ("com.google.android.material:material:1.2.1")
 
 
 
