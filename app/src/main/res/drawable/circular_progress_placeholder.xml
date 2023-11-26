@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:thicknessRatio="8"
+    android:useLevel="false">
+    <solid android:color="#D3D3D3"/> <!-- Background color of the progress bar -->
+    <!-- Define the size, if required -->
+</shape>

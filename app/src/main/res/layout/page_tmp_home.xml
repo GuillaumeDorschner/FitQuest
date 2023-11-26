@@ -15,7 +15,7 @@
         android:layout_below="@id/fragment_today_activites"
         android:layout_margin="40dp"
         android:padding="8dp"
-        android:background="@drawable/rounded_corner"
+        android:background="@drawable/roundstyle"
         android:layout_centerHorizontal="true" />
 
     <!-- fragment carousel -->
