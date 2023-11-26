@@ -41,7 +41,7 @@ class CardsPopularAdapter(private val context: Context, private val cardsList: L
 
     class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.title)
-        val image: ImageView = itemView.findViewById(R.id.card_image)
+        val image: ImageView = itemView.findViewById(R.id.image)
     }
 }
 

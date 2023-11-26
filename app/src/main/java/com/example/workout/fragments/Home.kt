@@ -44,7 +44,7 @@ class Home : Fragment() {
             CardPopular("Cbum", R.drawable.cbum, "https://www.instagram.com/cbum/"),
             CardPopular("Tibo Inshape", R.drawable.tibo, "https://www.youtube.com/user/OutLawzFR"),
             CardPopular("Arnold", R.drawable.arnold, "https://fr.wikipedia.org/wiki/Arnold_Schwarzenegger"),
-            // CardPopular("Mike Mentzers", R.drawable.mike, "https://fr.wikipedia.org/wiki/Mike_Mentzer"),
+            CardPopular("Mike Mentzers", R.drawable.mike, "https://fr.wikipedia.org/wiki/Mike_Mentzer"),
         )
 
         val adapter = CardsPopularAdapter(requireContext(), cardsList)
