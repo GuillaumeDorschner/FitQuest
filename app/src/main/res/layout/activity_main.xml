@@ -4,9 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".MainActivity"/>
-=======
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -18,9 +15,8 @@
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/design_default_color_background"
+        android:background="?android:attr/colorBackground"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation" />
 
 </RelativeLayout>
->>>>>>> dev
