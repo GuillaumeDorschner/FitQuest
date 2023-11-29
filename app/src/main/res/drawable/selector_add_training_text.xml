@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <!-- Define the drawable for pressed state -->
+        <shape>
+            <solid android:color="#CCCCCC"/> <!-- Color when the text is pressed -->
+        </shape>
+    </item>
+    <item>
+        <!-- Define the drawable for default state -->
+        <shape>
+            <solid android:color="@android:color/transparent"/> <!-- Transparent color for default state -->
+        </shape>
+    </item>
+</selector>
