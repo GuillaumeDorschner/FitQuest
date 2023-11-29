@@ -52,6 +52,7 @@
                     android:background="@drawable/search_bar_view"
                     android:fontFamily="sans-serif"
                     android:hint="Keyword (muscles)"/>
+
                 <ImageButton
                     android:id="@+id/searchButton"
                     android:layout_width="40dp"

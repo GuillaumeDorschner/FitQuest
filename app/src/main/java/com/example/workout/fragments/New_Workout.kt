@@ -1,9 +1,12 @@
 package com.example.workout.fragments
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -14,15 +17,15 @@ import com.example.workout.model.MessagesItem
 import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
+import java.io.IOException
+
 
 class New_Workout : Fragment() {
     private lateinit var binding: FragmentNewWorkoutBinding
     private lateinit var viewModel: WorkoutViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Initialize ViewModel
         viewModel = ViewModelProvider(this, WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
@@ -61,6 +64,38 @@ class New_Workout : Fragment() {
             }
         }
 
+        //Save the program in a file
+        binding.saveButton.setOnClickListener {
+            Toast.makeText(requireContext(), "Program saved", Toast.LENGTH_LONG).show()
+            saveProgram()
+        }
+
+
         return binding.root
     }
+
+    private fun saveProgram(): Boolean {
+        val program = binding.response.text.toString()
+        val keyword= binding.inputUsr.text.toString()
+        val filename = "programs.json"
+
+        if (program.isBlank()) {
+            println("An empty program cannot be stored")
+            return false
+        }
+
+        val dataToSave = "{\"$keyword\": \"$program\"}"
+        return try {
+            context?.openFileOutput(filename, Context.MODE_APPEND).use {
+                it?.write("$dataToSave\n".toByteArray())
+            }
+            true
+        } catch (e: IOException) {
+            e.printStackTrace()
+            false
+        }
+    }
+
+
+
 }

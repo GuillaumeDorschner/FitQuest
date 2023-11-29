@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> replaceFragment(Home())
                 R.id.activity -> replaceFragment(Home())
                 R.id.new_workout -> replaceFragment(New_Workout())
-                R.id.favorites -> replaceFragment(Home())
+                R.id.favorites -> replaceFragment(Favorites())
                 R.id.account -> replaceFragment(Home())
 
                 else ->{
