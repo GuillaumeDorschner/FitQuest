@@ -8,10 +8,6 @@ android {
     namespace = "com.example.workout"
     compileSdk = 34
 
-    buildFeatures {
-        viewBinding = true
-    }
-
     defaultConfig {
         applicationId = "com.example.workout"
         minSdk = 24
@@ -47,6 +43,7 @@ android {
 }
 
 dependencies {
+
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
 
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -60,7 +57,6 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation ("androidx.navigation:navigation-ui-ktx:2.3.5")
-    implementation ("com.google.android.material:material:1.2.1")
 
 
 
