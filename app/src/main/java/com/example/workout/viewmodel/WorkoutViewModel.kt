@@ -13,9 +13,11 @@ import retrofit2.Response
 class WorkoutViewModel(private val apiService: ApiService) : ViewModel() {
 
     val workoutResponse = MutableLiveData<CurrentOpenIAResponse?>()
+    val isLoading = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String?>()
 
     fun postWorkoutQuery(requestData: CurrentOpenIARequest) {
+        isLoading.value = true
         val call: Call<CurrentOpenIAResponse> = apiService.postQuery(requestData)
         call.enqueue(object : Callback<CurrentOpenIAResponse> {
             override fun onResponse(
@@ -25,12 +27,12 @@ class WorkoutViewModel(private val apiService: ApiService) : ViewModel() {
                 if (response.isSuccessful && response.body() != null) {
 
                     workoutResponse.value = response.body()
-                    // Log the successful response
                     Log.d("WorkoutViewModel", "Response: ${response.body()}")
+                    isLoading.value = false
                 } else {
                     onError("Error: Response unsuccessful")
-                    // Log the error response
                     Log.e("WorkoutViewModel", "Unsuccessful response: ${response.errorBody()?.string()}")
+                    isLoading.value = false
                 }
             }
 
