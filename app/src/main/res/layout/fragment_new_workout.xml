@@ -13,75 +13,78 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".fragments.New_Workout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:text="Create your workout"
-                    android:fontFamily="sans-serif"
-                    android:textStyle="bold"
-                    android:textSize="30sp" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="?attr/colorPrimary"
+                android:text="Create your workout"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/question"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/title"
-                    android:layout_marginStart="12dp"
-                    android:text="What do you want to do ?"
-                    android:fontFamily="sans-serif"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:fontFamily="sans-serif"
+                android:textColor="?attr/colorPrimary"
+                android:text="What do you want to do ?"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="22dp"
+                android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/inputUsr"
-                    android:layout_width="340dp"
+                    android:layout_width="0dp"
                     android:layout_height="40dp"
-                    android:layout_below="@id/question"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="14dp"
-                    android:background="@drawable/search_bar_view"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
                     android:fontFamily="sans-serif"
-                    android:hint="Keyword (muscles)"/>
+                    android:padding="12dp"
+                    android:textColor="?attr/colorPrimary"
+                    android:background="@drawable/roundstyle"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    android:textSize="14dp"
+                    android:hint="Keyword (muscles)"
+                    android:textColorHint="?attr/colorPrimary"/>
 
                 <ImageButton
                     android:id="@+id/searchButton"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-<<<<<<< Updated upstream
-                    android:layout_marginTop="14dp"
-                    android:layout_marginStart="365dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_search_white"
-                    android:layout_below="@id/question"
-                    android:background="@drawable/rounded_corner_green"/>
-=======
                     android:background="@drawable/roundstyle"
                     android:backgroundTint="?attr/colorSecondary"
                     android:src="@drawable/ic_search_white" />
 
             </LinearLayout>
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ProgressBar
-                    android:id="@+id/spinner"
+                    android:id="@+id/progress_loader"
                     style="?android:attr/progressBarStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="68dp"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
@@ -100,36 +103,30 @@
                 android:backgroundTint="?attr/colorPrimaryVariant"
                 android:hint="Personal coach program..."
                 android:textColorHint="?attr/colorPrimary"
+                android:visibility="gone"
                 android:padding="12dp"
                 android:textSize="18sp" />
->>>>>>> Stashed changes
 
-                <TextView
-                    android:id="@+id/response"
-                    android:layout_width="400dp"
-                    android:layout_height="490dp"
-                    android:layout_below="@id/inputUsr"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/search_bar_view"
-                    android:hint="Personal coach program..."
-                    android:fontFamily="sans-serif"
-                    android:textSize="18sp"
-                    android:layout_marginEnd="10dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <ImageButton
                     android:id="@+id/saveButton"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="150dp"
+                    android:layout_width="140dp"
                     android:layout_height="40dp"
-                    android:layout_below="@id/response"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_heart_white"
-                    android:background="@drawable/rounded_corner_red"
-                    android:onClick="onSaveButtonClick"/>
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/roundstyle"
+                    android:backgroundTint="?attr/colorError"
+                    android:onClick="onSaveButtonClick"
+                    android:src="@drawable/ic_heart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="visible"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 </layout>

@@ -57,6 +57,19 @@ class New_Workout : Fragment() {
 
         }
 
+        // Observe isLoading
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            if (isLoading) {
+                binding.progressLoader.visibility = View.VISIBLE
+                binding.response.visibility = View.GONE
+                binding.saveButton.visibility = View.GONE
+            }else{
+                binding.progressLoader.visibility = View.GONE
+                binding.response.visibility = View.VISIBLE
+                binding.saveButton.visibility = View.VISIBLE
+            }
+        }
+
         // Observe errorMessage
         viewModel.errorMessage.observe(viewLifecycleOwner) { error ->
             if (error != null) {
