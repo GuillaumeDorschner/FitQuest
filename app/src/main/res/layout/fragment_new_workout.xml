@@ -57,12 +57,52 @@
                     android:id="@+id/searchButton"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+<<<<<<< Updated upstream
                     android:layout_marginTop="14dp"
                     android:layout_marginStart="365dp"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/ic_search_white"
                     android:layout_below="@id/question"
                     android:background="@drawable/rounded_corner_green"/>
+=======
+                    android:background="@drawable/roundstyle"
+                    android:backgroundTint="?attr/colorSecondary"
+                    android:src="@drawable/ic_search_white" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/spinner"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="28dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/response"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="sans-serif"
+                android:textColor="?attr/colorPrimary"
+                android:background="@drawable/roundstyle"
+                android:backgroundTint="?attr/colorPrimaryVariant"
+                android:hint="Personal coach program..."
+                android:textColorHint="?attr/colorPrimary"
+                android:padding="12dp"
+                android:textSize="18sp" />
+>>>>>>> Stashed changes
 
                 <TextView
                     android:id="@+id/response"
