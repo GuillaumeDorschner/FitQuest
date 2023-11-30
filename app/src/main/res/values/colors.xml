@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Primary text color for the titles and button text -->
+    <color name="text_primary">#000000</color> <!-- Replace with the exact color from the design -->
+
+    <!-- Secondary text color for the values/calories/steps -->
+    <color name="text_secondary">#4A4A4A</color> <!-- Replace with the exact color from the design -->
+
+    <!-- Color for the underlined "Add a training +" text -->
+    <color name="text_link">#007BFF</color> <!-- Replace with the exact color from the design -->
+
+    <!-- Background color for the circular progress bar (inactive part) -->
+    <color name="progress_bar_background">#E0E0E0</color>
+
+    <!-- Foreground color for the active part of the circular progress bar -->
+    <color name="progress_bar_foreground">#4CAF50</color>
+
+    <!-- Background color for the horizontal progress bar (inactive part) -->
+    <color name="horizontal_progress_bar_background">#E0E0E0</color>
+
+    <!-- Foreground color for the active part of the horizontal progress bar -->
+    <color name="horizontal_progress_bar_foreground">#4CAF50</color>
+
+    <!-- If there is a shadow effect needed for the cards -->
+    <color name="card_shadow">#1A000000</color> <!-- Semi-transparent black for shadow -->
+
+    <!-- Background color for the page or app theme -->
+    <color name="background">#F5F5F5</color>
+
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#D9D9D9</color>
     <color name="green">#9FEC00</color>
     <color name="red">#F83232</color>
-    <color name="night_black">#121212</color>
-    <color name="night_white">#E0E0E0</color>
-    <color name="night_gray">#424242</color>
-    <color name="night_vert">#6FAF50</color>
+    <color name="night_black">#FFFFFF</color>
+    <color name="night_white">#000000</color>
+    <color name="night_gray">#D8D8D8</color>
+    <color name="night_vert">#9C27B0</color>
     <color name="night_red">#B71C1C</color>
 </resources>

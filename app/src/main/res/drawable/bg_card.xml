@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- Assuming white background for the card -->
+    <corners android:radius="18dp"/> <!-- Adjust the radius as needed to match the design -->
+    <!-- Add shadow effect if required -->
+</shape>
