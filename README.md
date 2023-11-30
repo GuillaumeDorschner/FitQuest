@@ -25,6 +25,11 @@ Some extra libraries you can use:
 - [ ] etc
 
 
+## Desgin Figma
+
+(UI)[https://www.figma.com/file/RZrYIUk2yXAzygtfjFdrJv/Mobile-devices?type=design&node-id=116%3A176&mode=design&t=XqjrOy3aXOeteVQ2-1]
+(Preview)[https://www.figma.com/proto/RZrYIUk2yXAzygtfjFdrJv/Mobile-devices?page-id=116%3A176&type=design&node-id=116-543&viewport=909%2C1004%2C1&t=BkLZoy1M4209mgUK-1&scaling=min-zoom&starting-point-node-id=116%3A543&mode=design]
+
 ## 🛠️ Developer's Corner
 
 The WorkOut App is engineered with cutting-edge technologies:
