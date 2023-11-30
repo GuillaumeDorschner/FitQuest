@@ -4,8 +4,11 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -57,6 +60,21 @@ class New_Workout : Fragment() {
 
         }
 
+        // Observe isLoading
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            if (isLoading) {
+                binding.progressLoader.visibility = View.VISIBLE
+                binding.response.visibility = View.GONE
+                binding.responseCar.visibility = View.GONE
+                binding.saveButton.visibility = View.GONE
+            }else{
+                binding.progressLoader.visibility = View.GONE
+                binding.response.visibility = View.VISIBLE
+                binding.responseCar.visibility = View.VISIBLE
+                binding.saveButton.visibility = View.VISIBLE
+            }
+        }
+
         // Observe errorMessage
         viewModel.errorMessage.observe(viewLifecycleOwner) { error ->
             if (error != null) {
@@ -70,9 +88,21 @@ class New_Workout : Fragment() {
             saveProgram()
         }
 
+        // val parentLayout: ScrollView? = view?.findViewById(R.id.new_workout)
+        // parentLayout?.setOnTouchListener { _, event ->
+        //     if (event.action == MotionEvent.ACTION_DOWN) {
+        //         hideKeyboard()
+        //     }
+        //     false
+        // }
 
         return binding.root
     }
+
+    // private fun hideKeyboard() {
+    //     val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    //     imm.hideSoftInputFromWindow(view?.windowToken, 0)
+    // }
 
     private fun saveProgram(): Boolean {
         val program = binding.response.text.toString()
