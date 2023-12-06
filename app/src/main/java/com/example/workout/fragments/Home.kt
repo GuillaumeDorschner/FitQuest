@@ -57,7 +57,7 @@ class Home : Fragment() {
 
         chart.show(items)
 
-        val cercle = view.findViewById(R.id.)
+//        val cercle = view.findViewById(R.id.)
 
         val donut = listOf(
             10F,
