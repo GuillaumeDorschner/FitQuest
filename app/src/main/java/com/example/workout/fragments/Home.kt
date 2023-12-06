@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.db.williamchart.view.BarChartView
+import com.db.williamchart.view.HorizontalBarChartView
 import com.example.workout.R
 import com.example.workout.adapter.CardsPopularAdapter
 import com.example.workout.model.CardPopular
@@ -46,7 +48,8 @@ class Home : Fragment() {
             CardPopular("Arnold", R.drawable.arnold, "https://fr.wikipedia.org/wiki/Arnold_Schwarzenegger"),
             CardPopular("Mike Mentzers", R.drawable.mike, "https://fr.wikipedia.org/wiki/Mike_Mentzer"),
         )
-
+        val cahrt = view.findViewById<HorizontalBarChartView>(R.id.chart)
+        cahrt.show(listOf(Pair("pas", 10F)))
         val adapter = CardsPopularAdapter(requireContext(), cardsList)
         view.findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter
 
