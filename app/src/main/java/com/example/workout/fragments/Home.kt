@@ -48,8 +48,25 @@ class Home : Fragment() {
             CardPopular("Arnold", R.drawable.arnold, "https://fr.wikipedia.org/wiki/Arnold_Schwarzenegger"),
             CardPopular("Mike Mentzers", R.drawable.mike, "https://fr.wikipedia.org/wiki/Mike_Mentzer"),
         )
-        val cahrt = view.findViewById<HorizontalBarChartView>(R.id.chart)
-        cahrt.show(listOf(Pair("pas", 10F)))
+        val chart = view.findViewById<HorizontalBarChartView>(R.id.chart)
+
+        val items = listOf(
+            "pas" to 100F,
+            "pas" to 60F,
+        )
+
+        chart.show(items)
+
+        val cercle = view.findViewById(R.id.)
+
+        val donut = listOf(
+            10F,
+            100
+        )
+
+
+
+
         val adapter = CardsPopularAdapter(requireContext(), cardsList)
         view.findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter
 

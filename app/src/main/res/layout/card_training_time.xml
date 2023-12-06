@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:text="Walk"
+            android:text="Training Time"
             android:textSize="17dp"
             android:textStyle="normal"
             android:layout_height="17dp"
@@ -31,20 +31,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorPrimary"
-            android:text="6872"
+            android:text="90 min"
             android:textSize="19dp"
             android:textStyle="bold" />
 
-        <com.db.williamchart.view.HorizontalBarChartView
+        <com.db.williamchart.view.DonutChartView
             android:id="@+id/chart"
-            android:layout_width="150dp"
-            android:layout_height="30dp"
-            app:chart_spacing="15dp"
-            app:chart_axis="y"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:chart_axis="none"
+            app:chart_donutThickness="15dp"
             app:chart_barsColor="@color/green"
             app:chart_barsBackgroundColor="@color/black"
-            app:chart_barsRadius="12dp"/>
-
+            app:chart_barsRadius="100dp"/>
 
     </LinearLayout>
 

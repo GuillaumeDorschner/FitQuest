@@ -71,7 +71,7 @@
                         android:backgroundTint="?attr/colorPrimary"
                         android:text="Button" />
 
-                    <include layout="@layout/card_walk"/>
+                    <include layout="@layout/card_walk" />
 
                 </LinearLayout>
 
