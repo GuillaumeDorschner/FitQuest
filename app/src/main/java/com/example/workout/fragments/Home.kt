@@ -1,5 +1,6 @@
 package com.example.workout.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.db.williamchart.view.BarChartView
+import com.db.williamchart.view.DonutChartView
 import com.db.williamchart.view.HorizontalBarChartView
 import com.example.workout.R
 import com.example.workout.adapter.CardsPopularAdapter
@@ -57,15 +59,20 @@ class Home : Fragment() {
 
         chart.show(items)
 
-//        val cercle = view.findViewById(R.id.)
+        // val donutchart = view.findViewById<DonutChartView>(R.id.chartDonut)
 
-        val donut = listOf(
-            10F,
-            100
-        )
+        // val donutSet = listOf(
+        //     20F,
+        //     80F,
+        //     100
+        // )
 
-
-
+        // donutchart.donutColors = intArrayOf(
+        //     Color.parseColor("#9FEC00"),
+        //     Color.parseColor("#D9D9D9")
+        // )
+        // donutchart.animation.duration = 1000L
+        // donutchart.animate(donutSet as List<Float>)
 
         val adapter = CardsPopularAdapter(requireContext(), cardsList)
         view.findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter

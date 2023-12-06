@@ -49,17 +49,27 @@
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
-                <include layout="@layout/card_training_time"/>
+                <include layout="@layout/card_training_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"/>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <include layout="@layout/card_calories"/>
+                    <include layout="@layout/card_calories"
+                        android:layout_width="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_height="wrap_content" />
 
-                    <include layout="@layout/card_walk" />
+                    <include layout="@layout/card_walk"
+                        android:layout_width="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -70,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/roundstyle"
                 android:backgroundTint="?attr/colorSecondary"
                 android:text="Create your workout"
