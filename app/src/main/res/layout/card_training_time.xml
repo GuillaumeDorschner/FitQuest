@@ -63,17 +63,17 @@
             </LinearLayout>
 
             <com.db.williamchart.view.DonutChartView
-                android:id="@+id/chart"
+                android:id="@+id/chartDonut"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
-                app:chart_donutBackgroundColor="@color/green"
+                app:chart_donutBackgroundColor="@color/gray"
+                app:chart_donutTotal="100"
+                app:chart_donutRoundCorners="true"
                 app:chart_donutThickness="15dp"
-                app:chart_donutTotal="300"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-            </com.db.williamchart.view.DonutChartView>
+                app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </FrameLayout>

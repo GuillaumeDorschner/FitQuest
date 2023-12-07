@@ -82,9 +82,12 @@
                 android:layout_weight="1"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/roundstyle"
-                android:backgroundTint="?attr/colorSecondary"
+                app:backgroundTint="@color/green"
                 android:text="Create your workout"
-                android:textColor="@color/white" />
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+
 
             <TextView
                 android:id="@+id/title3"
