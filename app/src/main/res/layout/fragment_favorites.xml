@@ -32,15 +32,14 @@
                     android:fontFamily="sans-serif"
                     android:textColor="?attr/colorPrimary"
                     android:layout_marginTop="70dp"
-                    android:text="Create your workout"
+                    android:text="Favorite Workout"
                     android:textSize="29dp"
                     android:textStyle="bold" />
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="75dp"
+                    android:layout_marginTop="46dp"
                     android:orientation="horizontal">
 
                     <EditText
@@ -78,21 +77,6 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp">
-
-                    <ImageButton
-                        android:id="@+id/saveButton"
-                        android:layout_height="40dp"
-                        android:background="@drawable/roundstyle"
-                        android:onClick="onSaveButtonClick"
-                        android:src="@drawable/ic_heart"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        tools:ignore="MissingConstraints"  android:layout_width="40dp"/>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ProgressBar
@@ -115,10 +99,10 @@
                 android:id="@+id/responseCar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_margin="20dp"
                 android:elevation="10dp"
                 android:background="@drawable/rounded_card"
+                android:visibility="gone"
                 android:clipChildren="false"
                 android:clipToPadding="false">
 
@@ -132,6 +116,7 @@
                     android:backgroundTint="#FFFFFF"
                     android:hint="Personal coach program..."
                     android:textColorHint="?attr/colorPrimary"
+                    android:visibility="gone"
                     android:layout_margin="22dp"
                     android:textSize="18sp" />
 
