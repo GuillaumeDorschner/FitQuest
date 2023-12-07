@@ -31,7 +31,7 @@ class New_Workout : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Initialize ViewModel
-        viewModel = ViewModelProvider(this, WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity(), WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
 
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_new_workout, container, false)
