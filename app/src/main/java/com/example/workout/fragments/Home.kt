@@ -45,12 +45,13 @@ class Home : Fragment() {
             "pas" to 60F,
         )
 
-        chart.show(items)
+        chart.animation.duration = 1000L
+        chart.animate(items)
 
         val donutchart = view.findViewById<DonutChartView>(R.id.chartDonut)
 
         val donutSet = listOf(
-            20F,
+            70F,
             80F
         )
 

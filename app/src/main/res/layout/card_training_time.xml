@@ -22,7 +22,7 @@
             android:text="Training Time"
             android:textSize="17dp"
             android:textStyle="normal"
-            android:layout_height="17dp"
+            android:layout_height="wrap_content"
             android:textColor="?attr/colorPrimary"
             tools:text="Walk" />
 
