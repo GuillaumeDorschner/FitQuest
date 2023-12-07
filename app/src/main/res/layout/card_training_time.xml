@@ -66,6 +66,7 @@
                 android:id="@+id/chartDonut"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
+                android:layout_margin="0dp"
                 app:chart_donutBackgroundColor="@color/gray"
                 app:chart_donutTotal="100"
                 app:chart_donutRoundCorners="true"

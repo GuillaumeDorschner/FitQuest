@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.db.williamchart.view.BarChartView
 import com.db.williamchart.view.DonutChartView
 import com.db.williamchart.view.HorizontalBarChartView
+import com.example.workout.MainActivity
 import com.example.workout.R
 import com.example.workout.adapter.CardsPopularAdapter
 import com.example.workout.model.CardPopular
@@ -29,6 +30,13 @@ class Home : Fragment() {
             CardPopular("Arnold", R.drawable.arnold, "https://fr.wikipedia.org/wiki/Arnold_Schwarzenegger"),
             CardPopular("Mike Mentzers", R.drawable.mike, "https://fr.wikipedia.org/wiki/Mike_Mentzer"),
         )
+
+        val button = view.findViewById<Button>(R.id.button5)
+
+
+        button.setOnClickListener {
+            (requireActivity() as MainActivity).gotoNewWorkOut()
+        }
 
         val chart = view.findViewById<HorizontalBarChartView>(R.id.chart)
 
@@ -57,5 +65,9 @@ class Home : Fragment() {
         view.findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter
 
         return view
+    }
+
+    private fun replaceFragment(newWorkout: New_Workout) {
+
     }
 }
