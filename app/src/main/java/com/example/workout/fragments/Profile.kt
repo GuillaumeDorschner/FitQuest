@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.workout.R
-import com.example.workout.databinding.FragmentActivityBinding
+import com.example.workout.databinding.FragmentProfileBinding
 
-class Activity : Fragment() {
-    private lateinit var binding: FragmentActivityBinding
+class Profile : Fragment() {
+    private lateinit var binding: FragmentProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class Activity : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentActivityBinding.inflate(inflater, container, false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         return binding.root
     }
