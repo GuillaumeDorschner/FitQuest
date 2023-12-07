@@ -1,6 +1,5 @@
 package com.example.workout
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import com.example.workout.databinding.ActivityMainBinding
 import android.os.Bundle
@@ -31,11 +30,10 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.home -> replaceFragment(Home())
-                R.id.activity -> replaceFragment(Home())
+                R.id.activity -> replaceFragment(Activity())
                 R.id.new_workout -> replaceFragment(New_Workout())
                 R.id.favorites -> replaceFragment(Favorites())
-                R.id.account -> replaceFragment(Home())
-
+                R.id.account -> replaceFragment(Profile())
                 else ->{
 
                 }

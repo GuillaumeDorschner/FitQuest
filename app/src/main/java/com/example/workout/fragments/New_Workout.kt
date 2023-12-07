@@ -30,14 +30,11 @@ class New_Workout : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        // Initialize ViewModel
         viewModel = ViewModelProvider(requireActivity(), WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
 
-        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_new_workout, container, false)
         binding.workoutViewModel = viewModel
 
-        // Setup button click listener
         binding.searchButton.setOnClickListener {
             val userInput = binding.inputUsr.text.toString()
             val request = CurrentOpenIARequest(
@@ -50,7 +47,6 @@ class New_Workout : Fragment() {
             viewModel.postWorkoutQuery(request)
         }
 
-        // Observe workoutResponse
         viewModel.workoutResponse.observe(viewLifecycleOwner) { response ->
 
             if (response != null && response.choices?.isNotEmpty() == true) {
@@ -60,7 +56,6 @@ class New_Workout : Fragment() {
 
         }
 
-        // Observe isLoading
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
             if (isLoading) {
                 binding.progressLoader.visibility = View.VISIBLE
@@ -75,14 +70,12 @@ class New_Workout : Fragment() {
             }
         }
 
-        // Observe errorMessage
         viewModel.errorMessage.observe(viewLifecycleOwner) { error ->
             if (error != null) {
                 binding.response.text = "An error occurred retry"
             }
         }
 
-        //Save the program in a file
         binding.saveButton.setOnClickListener {
             Toast.makeText(requireContext(), "Program saved", Toast.LENGTH_LONG).show()
             saveProgram()
@@ -125,7 +118,4 @@ class New_Workout : Fragment() {
             false
         }
     }
-
-
-
 }
