@@ -31,6 +31,10 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
+            <include layout=""/>
+            <include layout=""/>
+            <include layout=""/>
+
         </LinearLayout>
     </ScrollView>
 </layout>
