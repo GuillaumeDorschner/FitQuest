@@ -23,6 +23,10 @@ class Profile : Fragment() {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+        binding.logoutButton.setOnClickListener {
+            // do the logout
+        }
+
         return binding.root
     }
 }
