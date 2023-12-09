@@ -1,8 +1,11 @@
 package com.example.workout
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import com.example.workout.databinding.ActivityMainBinding
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -17,15 +20,23 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-        val viewModel = ViewModelProvider(this, WorkoutViewModelFactory(ApiConfig.getApiService())).get(
-            WorkoutViewModel::class.java)
+        val viewModel = ViewModelProvider(this, WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragment(Home())
+
+        if (isUserLoggedIn()) {
+            replaceFragment(Home())
+        } else {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.frame_layout, Welcome())
+                .commit()
+        }
 
         binding.bottomNav.setOnItemSelectedListener {
             when(it.itemId){
@@ -42,12 +53,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun replaceFragment(frag : Fragment){
+    private fun isUserLoggedIn(): Boolean {
+        val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+        return isLoggedIn
+    }
+
+
+    fun replaceFragment(frag: Fragment) {
+        if (frag is Welcome || frag is Login || frag is SignUp) {
+            binding.bottomNav.visibility = View.GONE
+        } else {
+            binding.bottomNav.visibility = View.VISIBLE
+        }
+
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,frag)
+        fragmentTransaction.replace(R.id.frame_layout, frag)
         fragmentTransaction.commit()
     }
+
+
 
     fun gotoNewWorkOut(){
         binding.bottomNav.selectedItemId = R.id.new_workout
