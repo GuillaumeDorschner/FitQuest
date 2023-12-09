@@ -12,16 +12,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome"
+        android:textColor="@color/black"
         android:textSize="24sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="to your FitNess Journey"
+        android:textColor="@color/black"
         android:textSize="24sp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="220dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
 

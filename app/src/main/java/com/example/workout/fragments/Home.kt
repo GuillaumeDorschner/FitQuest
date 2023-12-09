@@ -33,7 +33,6 @@ class Home : Fragment() {
 
         val button = view.findViewById<Button>(R.id.button5)
 
-
         button.setOnClickListener {
             (requireActivity() as MainActivity).gotoNewWorkOut()
         }
@@ -66,9 +65,5 @@ class Home : Fragment() {
         view.findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter
 
         return view
-    }
-
-    private fun replaceFragment(newWorkout: New_Workout) {
-
     }
 }

@@ -27,15 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         val viewModel = ViewModelProvider(this, WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         if (isUserLoggedIn()) {
             replaceFragment(Home())
         } else {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.frame_layout, Welcome())
-                .commit()
+            replaceFragment(Welcome())
         }
 
         binding.bottomNav.setOnItemSelectedListener {
@@ -54,9 +49,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isUserLoggedIn(): Boolean {
-        val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
-        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
-        return isLoggedIn
+        //val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        // val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+        // return isLoggedIn
+        return true
     }
 
 
