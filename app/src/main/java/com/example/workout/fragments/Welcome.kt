@@ -28,12 +28,10 @@ class Welcome : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.loginButton.setOnClickListener {
-            Log.d("messge", "djsbfkjsdhfks")
             (requireActivity() as MainActivity).replaceFragment(Login())
         }
 
         binding.signUpButton.setOnClickListener {
-            Log.d("messge", "djsbfkjsdhfdfhsdqkjfhqjksdfjksqdhjshks")
             (requireActivity() as MainActivity).replaceFragment(SignUp())
         }
     }

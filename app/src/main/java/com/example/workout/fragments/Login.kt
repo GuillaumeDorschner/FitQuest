@@ -5,32 +5,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.workout.MainActivity
 import com.example.workout.R
-import com.example.workout.databinding.FragmentWelcomeBinding
+import com.example.workout.databinding.FragmentLoginBinding
 
 class Login : Fragment() {
 
-    private var _binding: FragmentWelcomeBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+        binding.next.setOnClickListener{
+            (requireActivity() as MainActivity).replaceFragment(Home())
+        }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.loginButton.setOnClickListener {
-            // Remplacer par la logique de navigation vers le fragment de connexion
-        }
-
-        binding.signUpButton.setOnClickListener {
-            // Remplacer par la logique de navigation vers le fragment d'inscription
-        }
     }
 
     override fun onDestroyView() {

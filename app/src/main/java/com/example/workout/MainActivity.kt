@@ -49,14 +49,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isUserLoggedIn(): Boolean {
-        //val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
-        // val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
-        // return isLoggedIn
-        return true
+        val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+        return isLoggedIn
     }
 
 
     fun replaceFragment(frag: Fragment) {
+        Log.d("mejje", "replaceFragment: $frag")
         if (frag is Welcome || frag is Login || frag is SignUp) {
             binding.bottomNav.visibility = View.GONE
         } else {
