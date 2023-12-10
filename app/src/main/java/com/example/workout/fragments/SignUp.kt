@@ -1,5 +1,6 @@
 package com.example.workout.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,6 +22,11 @@ class SignUp : Fragment() {
         _binding = FragmentSignupBinding.inflate(inflater, container, false)
 
         binding.next.setOnClickListener{
+            // Mise à jour des préférences partagées
+            val sharedPreferences = activity?.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+            sharedPreferences?.edit()?.putBoolean("isLoggedIn", true)?.apply()
+
+            // Naviguer vers le fragment Home
             (requireActivity() as MainActivity).replaceFragment(Home())
         }
 

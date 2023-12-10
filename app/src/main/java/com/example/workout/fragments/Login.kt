@@ -1,5 +1,6 @@
 package com.example.workout.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,15 +22,13 @@ class Login : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.next.setOnClickListener{
+            val sharedPreferences = activity?.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+            sharedPreferences?.edit()?.putBoolean("isLoggedIn", true)?.apply()
+
             (requireActivity() as MainActivity).replaceFragment(Home())
         }
 
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onDestroyView() {
