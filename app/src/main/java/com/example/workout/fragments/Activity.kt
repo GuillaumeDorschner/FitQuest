@@ -8,6 +8,7 @@ import com.db.williamchart.view.BarChartView
 import com.db.williamchart.view.DonutChartView
 import com.db.williamchart.view.LineChartView
 import com.example.workout.R
+import com.example.workout.databinding.FragmentActivityBinding
 
 
 class Activity : Fragment() {
