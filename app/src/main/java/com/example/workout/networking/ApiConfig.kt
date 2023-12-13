@@ -20,7 +20,7 @@ class ApiConfig {
                 .addInterceptor { chain ->
                     val original = chain.request()
                     val requestBuilder = original.newBuilder()
-                        .header("Authorization", "Bearer " + "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")
+                        .header("Authorization", "Bearer " + "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")
                     val request = requestBuilder.build()
                     chain.proceed(request)
                 }
