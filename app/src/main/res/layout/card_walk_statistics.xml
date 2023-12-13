@@ -98,8 +98,8 @@
 
                 <com.db.williamchart.view.DonutChartView
                     android:id="@+id/chartDonut1"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_margin="0dp"
                     app:chart_donutBackgroundColor="@color/gray"
                     app:chart_donutTotal="100"
@@ -176,8 +176,8 @@
 
                 <com.db.williamchart.view.DonutChartView
                     android:id="@+id/chartDonut2"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:layout_margin="0dp"
                     app:chart_donutBackgroundColor="@color/gray"
                     app:chart_donutTotal="100"
@@ -254,8 +254,8 @@
 
                 <com.db.williamchart.view.DonutChartView
                     android:id="@+id/chartDonut3"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:layout_margin="0dp"
                     app:chart_donutBackgroundColor="@color/gray"
                     app:chart_donutTotal="100"
