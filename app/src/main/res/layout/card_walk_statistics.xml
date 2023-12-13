@@ -22,7 +22,7 @@
             android:textSize="17sp"
             android:textStyle="bold"
             android:textColor="?attr/colorPrimary"
-            tools:text="Walk" />
+            />
 
         <TextView
             android:id="@+id/textViewChartSubtitle"
@@ -60,30 +60,56 @@
                 android:textStyle="bold"
                 android:textColor="?attr/colorPrimary" />
 
-            <FrameLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="90"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="min"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </LinearLayout>
 
                 <com.db.williamchart.view.DonutChartView
-                    android:id="@+id/totalStepsChart"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:chart_donutThickness="14dp"
+                    android:id="@+id/chartDonut1"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="0dp"
                     app:chart_donutBackgroundColor="@color/gray"
-                    app:chart_donutRoundCorners="true"
                     app:chart_donutTotal="100"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:id="@+id/totalStepsCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="41 689"
-                    android:textSize="19sp"
-                    android:textStyle="bold"
-                    android:textColor="?attr/colorPrimary"
-                    android:layout_gravity="center" />
-            </FrameLayout>
+                    app:chart_donutRoundCorners="true"
+                    app:chart_donutThickness="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
@@ -112,30 +138,56 @@
                 android:textStyle="normal"
                 android:textColor="?attr/colorPrimary" />
 
-            <FrameLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="90"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="min"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </LinearLayout>
 
                 <com.db.williamchart.view.DonutChartView
-                    android:id="@+id/HighestChart"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:chart_donutThickness="14dp"
+                    android:id="@+id/chartDonut2"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="0dp"
                     app:chart_donutBackgroundColor="@color/gray"
-                    app:chart_donutRoundCorners="true"
                     app:chart_donutTotal="100"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:id="@+id/HighestCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="7893"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="?attr/colorPrimary"
-                    android:layout_gravity="center" />
-            </FrameLayout>
+                    app:chart_donutRoundCorners="true"
+                    app:chart_donutThickness="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
@@ -164,30 +216,56 @@
                 android:textStyle="normal"
                 android:textColor="?attr/colorPrimary" />
 
-            <FrameLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="90"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="min"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="19dp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+                </LinearLayout>
 
                 <com.db.williamchart.view.DonutChartView
-                    android:id="@+id/LowestChart"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:chart_donutThickness="14dp"
+                    android:id="@+id/chartDonut3"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_margin="0dp"
                     app:chart_donutBackgroundColor="@color/gray"
-                    app:chart_donutRoundCorners="true"
                     app:chart_donutTotal="100"
-                    android:layout_gravity="center" />
-
-                <TextView
-                    android:id="@+id/LowestCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4674"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="?attr/colorPrimary"
-                    android:layout_gravity="center" />
-            </FrameLayout>
+                    app:chart_donutRoundCorners="true"
+                    app:chart_donutThickness="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
