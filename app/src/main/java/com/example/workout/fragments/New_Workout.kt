@@ -17,10 +17,14 @@ import com.example.workout.R
 import com.example.workout.databinding.FragmentNewWorkoutBinding
 import com.example.workout.model.CurrentOpenIARequest
 import com.example.workout.model.MessagesItem
+import com.example.workout.model.Program
 import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
+import com.google.gson.Gson
+import java.io.FileWriter
 import java.io.IOException
+import java.io.PrintWriter
 
 
 class New_Workout : Fragment() {
@@ -77,8 +81,12 @@ class New_Workout : Fragment() {
         }
 
         binding.saveButton.setOnClickListener {
-            Toast.makeText(requireContext(), "Program saved", Toast.LENGTH_LONG).show()
-            saveProgram()
+            if(saveProgram(requireContext())){
+                Toast.makeText(requireContext(), "Program saved", Toast.LENGTH_LONG).show()
+            }
+            else{
+                Toast.makeText(requireContext(), "Program not saved", Toast.LENGTH_LONG).show()
+            }
         }
 
         // val parentLayout: ScrollView? = view?.findViewById(R.id.new_workout)
@@ -97,20 +105,19 @@ class New_Workout : Fragment() {
     //     imm.hideSoftInputFromWindow(view?.windowToken, 0)
     // }
 
-    private fun saveProgram(): Boolean {
+    private fun saveProgram(context: Context): Boolean {
         val program = binding.response.text.toString()
-        val keyword= binding.inputUsr.text.toString()
+        val keyword = binding.inputUsr.text.toString()
         val filename = "programs.json"
 
-        if (program.isBlank()) {
-            println("An empty program cannot be stored")
-            return false
-        }
-
-        val dataToSave = "{\"$keyword\": \"$program\"}"
         return try {
+
+            val gson = Gson()
+            val programObject = Program(keyword, program)
+            val programJson = gson.toJson(programObject)
+
             context?.openFileOutput(filename, Context.MODE_APPEND).use {
-                it?.write("$dataToSave\n".toByteArray())
+                it?.write("$programJson\n".toByteArray())
             }
             true
         } catch (e: IOException) {
@@ -118,4 +125,6 @@ class New_Workout : Fragment() {
             false
         }
     }
+
+
 }

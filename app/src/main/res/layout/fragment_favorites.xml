@@ -31,15 +31,16 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:textColor="?attr/colorPrimary"
-                    android:layout_marginTop="70dp"
-                    android:text="Favorite Workout"
+                    android:layout_marginTop="50dp"
+                    android:text="Create your workout"
                     android:textSize="29dp"
                     android:textStyle="bold" />
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="46dp"
+                    android:layout_marginTop="75dp"
                     android:orientation="horizontal">
 
                     <EditText
@@ -77,6 +78,21 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp">
+
+                    <ImageButton
+                        android:id="@+id/saveButton"
+                        android:layout_height="40dp"
+                        android:background="@drawable/roundstyle"
+                        android:onClick="onSaveButtonClick"
+                        android:src="@drawable/ic_heart"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="MissingConstraints"  android:layout_width="40dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ProgressBar
@@ -95,30 +111,23 @@
 
             </LinearLayout>
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <LinearLayout
                 android:id="@+id/responseCar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:elevation="10dp"
+                android:layout_height="420dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/rounded_card"
-                android:visibility="gone"
                 android:clipChildren="false"
-                android:clipToPadding="false">
+                android:clipToPadding="false"
+                android:elevation="10dp">
 
-                <TextView
-                    android:id="@+id/response"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    tools:listitem="@layout/recyclerview_favorites"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:textColor="?attr/colorPrimary"
-                    android:background="@drawable/roundstyle"
-                    android:backgroundTint="#FFFFFF"
-                    android:hint="Personal coach program..."
-                    android:textColorHint="?attr/colorPrimary"
-                    android:visibility="gone"
-                    android:layout_margin="22dp"
-                    android:textSize="18sp" />
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"/>
 
             </LinearLayout>
         </LinearLayout>
