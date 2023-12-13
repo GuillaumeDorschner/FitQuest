@@ -22,6 +22,9 @@ import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
 import com.google.gson.Gson
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.File
 import java.io.FileWriter
 import java.io.IOException
 import java.io.PrintWriter
@@ -81,13 +84,21 @@ class New_Workout : Fragment() {
         }
 
         binding.saveButton.setOnClickListener {
-            if(saveProgram(requireContext())){
-                Toast.makeText(requireContext(), "Program saved", Toast.LENGTH_LONG).show()
-            }
-            else{
-                Toast.makeText(requireContext(), "Program not saved", Toast.LENGTH_LONG).show()
+            val program = binding.response.text.toString()
+            val keyword = binding.inputUsr.text.toString()
+
+            if (program.contains("An error occurred retry")) {
+                Toast.makeText(requireContext(), "Error in program. Not saved.", Toast.LENGTH_LONG).show()
+            } else {
+                val programObject = Program(keyword, program)
+                if (appendAndSaveProgram(requireContext(), programObject)) {
+                    Toast.makeText(requireContext(), "Program saved", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(requireContext(), "Failed to save program", Toast.LENGTH_LONG).show()
+                }
             }
         }
+
 
         // val parentLayout: ScrollView? = view?.findViewById(R.id.new_workout)
         // parentLayout?.setOnTouchListener { _, event ->
@@ -105,19 +116,30 @@ class New_Workout : Fragment() {
     //     imm.hideSoftInputFromWindow(view?.windowToken, 0)
     // }
 
-    private fun saveProgram(context: Context): Boolean {
-        val program = binding.response.text.toString()
-        val keyword = binding.inputUsr.text.toString()
+    private fun readExistingPrograms(context: Context): JSONArray {
         val filename = "programs.json"
+        val file = File(context.filesDir, filename)
+        if (!file.exists()) return JSONArray()
 
         return try {
+            val content = file.readText()
+            JSONArray(content)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            JSONArray()  // Return an empty array in case of an error
+        }
+    }
 
-            val gson = Gson()
-            val programObject = Program(keyword, program)
-            val programJson = gson.toJson(programObject)
+    private fun appendAndSaveProgram(context: Context, newProgram: Program): Boolean {
+        val existingPrograms = readExistingPrograms(context)
+        val gson = Gson()
+        val programJson = gson.toJson(newProgram)
+        existingPrograms.put(JSONObject(programJson))
 
-            context?.openFileOutput(filename, Context.MODE_APPEND).use {
-                it?.write("$programJson\n".toByteArray())
+        val filename = "programs.json"
+        return try {
+            context.openFileOutput(filename, MODE_PRIVATE).use {
+                it.write(existingPrograms.toString().toByteArray())
             }
             true
         } catch (e: IOException) {
@@ -125,6 +147,4 @@ class New_Workout : Fragment() {
             false
         }
     }
-
-
 }
