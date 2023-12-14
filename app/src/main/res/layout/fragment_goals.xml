@@ -12,69 +12,46 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="What are your goals"
         android:textColor="@color/black"
         android:layout_marginBottom="40dp"
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/editTextTextNom"
+        android:id="@+id/editTextGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Nom"
+        android:hint="Goal"
         android:textColor="#000000" />
 
     <EditText
-        android:id="@+id/editTextPrenom"
+        android:id="@+id/editpoids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Prénom"
+        android:hint="Weight"
+        android:textColor="#000000" />
+    <EditText
+        android:id="@+id/editpas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Walk /day"
         android:textColor="#000000" />
 
     <EditText
-        android:id="@+id/editTextMail"
+        android:id="@+id/editTraining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Mail"
-        android:inputType="textEmailAddress"
+        android:hint="Hours of Training /week"
         android:textColor="#000000" />
 
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="Date de naissance"
-        android:inputType="date"
-        android:textColor="#000000" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColor="#000000" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textView6"

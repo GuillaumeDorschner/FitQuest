@@ -46,32 +46,39 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/titlSe"
+            android:id="@+id/Goals"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="sqdjdkljflkqsdflk sjflkqsdjsqd"
+            android:text="Goals : "
             android:textSize="17dp"
             android:textStyle="normal"
             android:textColor="?attr/colorPrimary"/>
 
         <TextView
-            android:id="@+id/tistle"
+            android:id="@+id/Poids"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="sqdjdkljflkqsdflk sjflkqsdjsqd"
+            android:text="Weight : "
             android:textSize="17dp"
             android:textStyle="normal"
             android:textColor="?attr/colorPrimary"/>
 
         <TextView
-            android:id="@+id/titsle"
+            android:id="@+id/pas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="sqdjdkljflkqsdflk sjflkqsdjsqd"
+            android:text="Walk : "
             android:textSize="17dp"
             android:textStyle="normal"
             android:textColor="?attr/colorPrimary"/>
-
+        <TextView
+            android:id="@+id/training"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="training : "
+            android:textSize="17dp"
+            android:textStyle="normal"
+            android:textColor="?attr/colorPrimary"/>
     </LinearLayout>
 
 </FrameLayout>

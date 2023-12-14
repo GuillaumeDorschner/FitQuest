@@ -4,11 +4,8 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import android.widget.ScrollView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -17,7 +14,7 @@ import com.example.workout.R
 import com.example.workout.databinding.FragmentNewWorkoutBinding
 import com.example.workout.model.CurrentOpenIARequest
 import com.example.workout.model.MessagesItem
-import com.example.workout.model.Program
+import com.example.workout.data.Program
 import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
@@ -25,9 +22,7 @@ import com.google.gson.Gson
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
-import java.io.FileWriter
 import java.io.IOException
-import java.io.PrintWriter
 
 
 class New_Workout : Fragment() {

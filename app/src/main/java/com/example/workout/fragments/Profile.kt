@@ -1,5 +1,6 @@
 package com.example.workout.fragments
 
+import UserManagement
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,19 +14,38 @@ import com.example.workout.databinding.FragmentProfileBinding
 
 class Profile : Fragment() {
     private lateinit var binding: FragmentProfileBinding
+    private lateinit var userManager: UserManagement
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        // Initialize UserManagement with context when the fragment is attached
+        userManager = UserManagement(requireContext().applicationContext)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentProfileBinding.inflate(inflater, container, false)
-
+        val current = userManager.CurrentUser()
+        if(current != null)
+        {
+            binding = FragmentProfileBinding.inflate(inflater, container, false)
+            binding.Name.setText(""+current.firstName+ " "+current.lastName)
+            binding.About.text1.text = binding.About.text1.text.toString()+current.dateOfBirth
+            binding.About.text2.setText(current.email)
+            binding.About.text3.setText("*******")
+            binding.Goals.Goals.setText(current.goals)
+            binding.Goals.pas.setText(""+current.pas)
+            binding.Goals.Poids.setText(""+current.poids)
+            binding.Goals.training.setText(current.training)
+        }
+        binding.About.searchButton.setOnClickListener{
+            (activity as? MainActivity)?.replaceFragment(SignUp())
+        }
+        binding.Goals.searchButton.setOnClickListener {
+            (activity as? MainActivity)?.replaceFragment(Goals())
+        }
         binding.logoutButton.setOnClickListener {
-            // Mettre à jour le statut de connexion dans les préférences partagées
-            val sharedPreferences = activity?.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
-            sharedPreferences?.edit()?.putBoolean("isLoggedIn", false)?.apply()
-
-            // Rediriger vers le fragment de bienvenue
+            userManager.logout()
             (activity as? MainActivity)?.replaceFragment(Welcome())
         }
 
