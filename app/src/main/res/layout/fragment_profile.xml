@@ -44,11 +44,16 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="MissingConstraints" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <include layout="@layout/card_about"/>
-                <include layout="@layout/card_goals"/>
+                <include
+                    android:id="@+id/About"
+                    layout="@layout/card_about" />
+                <include
+                    android:id="@+id/Goals"
+                    layout="@layout/card_goals"/>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
