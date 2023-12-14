@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.activity -> replaceFragment(Activity())
                 R.id.new_workout -> replaceFragment(New_Workout())
                 R.id.favorites -> replaceFragment(Favorites())
-                R.id.account -> replaceFragment(Home())
+                R.id.account -> replaceFragment(Profile())
                 else ->{
 
                 }
