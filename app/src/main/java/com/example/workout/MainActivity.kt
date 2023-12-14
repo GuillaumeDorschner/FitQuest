@@ -13,21 +13,28 @@ import com.example.workout.fragments.*
 import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
+import User;
+import UserManagement
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+    private lateinit var userManagement: UserManagement
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        userManagement = UserManagement(applicationContext)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        sharedPreferences.edit().putBoolean("isLiked", false).apply()
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
         val viewModel = ViewModelProvider(this, WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
 
-        if (isUserLoggedIn()) {
+        if (userManagement.CurrentUser()!=null) {
             replaceFragment(Home())
         } else {
             replaceFragment(Welcome())
@@ -39,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.activity -> replaceFragment(Activity())
                 R.id.new_workout -> replaceFragment(New_Workout())
                 R.id.favorites -> replaceFragment(Favorites())
-                R.id.account -> replaceFragment(Home())
+                R.id.account -> replaceFragment(Profile())
                 else ->{
 
                 }
