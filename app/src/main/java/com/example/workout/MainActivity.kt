@@ -73,8 +73,6 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
-
-
     fun gotoNewWorkOut(){
         binding.bottomNav.selectedItemId = R.id.new_workout
     }
