@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        sharedPreferences.edit().putBoolean("isLiked", false).apply()
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
         val viewModel = ViewModelProvider(this, WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
@@ -43,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.activity -> replaceFragment(Activity())
                 R.id.new_workout -> replaceFragment(New_Workout())
                 R.id.favorites -> replaceFragment(Favorites())
-                R.id.account -> replaceFragment(Home())
+                R.id.account -> replaceFragment(Profile())
                 else ->{
 
                 }
@@ -72,8 +75,6 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.frame_layout, frag)
         fragmentTransaction.commit()
     }
-
-
 
     fun gotoNewWorkOut(){
         binding.bottomNav.selectedItemId = R.id.new_workout
