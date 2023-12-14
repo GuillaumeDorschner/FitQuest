@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+        sharedPreferences.edit().putBoolean("isLiked", false).apply()
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
         val viewModel = ViewModelProvider(this, WorkoutViewModelFactory(ApiConfig.getApiService())).get(WorkoutViewModel::class.java)
