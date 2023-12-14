@@ -2,13 +2,11 @@ package com.example.workout.fragments
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import android.widget.ScrollView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -17,7 +15,7 @@ import com.example.workout.R
 import com.example.workout.databinding.FragmentNewWorkoutBinding
 import com.example.workout.model.CurrentOpenIARequest
 import com.example.workout.model.MessagesItem
-import com.example.workout.model.Program
+import com.example.workout.data.Program
 import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
@@ -25,14 +23,14 @@ import com.google.gson.Gson
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
-import java.io.FileWriter
 import java.io.IOException
-import java.io.PrintWriter
 
 
 class New_Workout : Fragment() {
     private lateinit var binding: FragmentNewWorkoutBinding
     private lateinit var viewModel: WorkoutViewModel
+    private lateinit var sharedPreferences: SharedPreferences
+
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -42,7 +40,13 @@ class New_Workout : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_new_workout, container, false)
         binding.workoutViewModel = viewModel
 
+        
+        sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
+        val isLiked = sharedPreferences.getBoolean("isLiked", false)
+        updateHeartButton(isLiked)
+
         binding.searchButton.setOnClickListener {
+            val isLiked = sharedPreferences.getBoolean("isLiked", false)
             val userInput = binding.inputUsr.text.toString()
             val request = CurrentOpenIARequest(
                 model = "gpt-4",
@@ -84,17 +88,30 @@ class New_Workout : Fragment() {
         }
 
         binding.saveButton.setOnClickListener {
-            val program = binding.response.text.toString()
-            val keyword = binding.inputUsr.text.toString()
+            val currentLikedState = sharedPreferences.getBoolean("isLiked", false)
+            val newLikedState = !currentLikedState
+            sharedPreferences.edit().putBoolean("isLiked", newLikedState).apply()
+            updateHeartButton(newLikedState)
 
-            if (program.contains("An error occurred retry")) {
-                Toast.makeText(requireContext(), "Error in program. Not saved.", Toast.LENGTH_LONG).show()
-            } else {
-                val programObject = Program(keyword, program)
-                if (appendAndSaveProgram(requireContext(), programObject)) {
-                    Toast.makeText(requireContext(), "Program saved", Toast.LENGTH_LONG).show()
+            if(newLikedState){
+                val program = binding.response.text.toString()
+                val keyword = binding.inputUsr.text.toString()
+    
+                if (program.contains("An error occurred retry")) {
+                    Toast.makeText(requireContext(), "Error in program. Not saved.", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(requireContext(), "Failed to save program", Toast.LENGTH_LONG).show()
+                    val programObject = Program(keyword, program)
+                    if (appendAndSaveProgram(requireContext(), programObject)) {
+                        Toast.makeText(requireContext(), "Program saved", Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(requireContext(), "Failed to save program", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }else{
+                if (removeSavedProgram(requireContext())) {
+                    Toast.makeText(requireContext(), "Last program removed", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(requireContext(), "Failed to remove last program", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -115,6 +132,14 @@ class New_Workout : Fragment() {
     //     val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     //     imm.hideSoftInputFromWindow(view?.windowToken, 0)
     // }
+
+    private fun updateHeartButton(isLiked: Boolean) {
+        if (isLiked) {
+            binding.saveButton.setImageResource(R.drawable.ic_heart_filled)
+        } else {
+            binding.saveButton.setImageResource(R.drawable.ic_heart_outline)
+        }
+    }
 
     private fun readExistingPrograms(context: Context): JSONArray {
         val filename = "programs.json"
@@ -147,4 +172,29 @@ class New_Workout : Fragment() {
             false
         }
     }
+
+    private fun removeSavedProgram(context: Context): Boolean {
+        val existingPrograms = readExistingPrograms(context)
+    
+        // Vérifier s'il y a des programmes à enlever
+        if (existingPrograms.length() > 0) {
+            // Enlever le dernier programme
+            existingPrograms.remove(existingPrograms.length() - 1)
+        } else {
+            // S'il n'y a pas de programmes, retourner true car il n'y a rien à enlever
+            return true
+        }
+    
+        val filename = "programs.json"
+        return try {
+            context.openFileOutput(filename, MODE_PRIVATE).use {
+                it.write(existingPrograms.toString().toByteArray())
+            }
+            true
+        } catch (e: IOException) {
+            e.printStackTrace()
+            false
+        }
+    }
+    
 }
