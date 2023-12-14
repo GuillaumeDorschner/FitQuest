@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
-import com.db.williamchart.view.BarChartView
+import java.util.Random;
 import com.db.williamchart.view.DonutChartView
 import com.db.williamchart.view.HorizontalBarChartView
 import com.example.workout.MainActivity
@@ -41,7 +41,7 @@ class Home : Fragment() {
 
         val items = listOf(
             "pas" to 100F,
-            "pas" to 60F,
+            "pas" to Random().nextFloat() * 100
         )
 
         chart.animation.duration = 1000L
@@ -50,8 +50,8 @@ class Home : Fragment() {
         val donutchart = view.findViewById<DonutChartView>(R.id.chartDonut)
 
         val donutSet = listOf(
-            70F,
-            80F
+            Random().nextFloat() * 100,
+            0F
         )
 
         donutchart.donutColors = intArrayOf(
