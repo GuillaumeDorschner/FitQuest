@@ -20,6 +20,7 @@ import okio.IOException
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
+import java.io.FileWriter
 
 class Favorites : Fragment() {
     private lateinit var binding: FragmentFavoritesBinding
@@ -38,7 +39,13 @@ class Favorites : Fragment() {
 
         programAdapter = ProgramAdapter(requireContext(), fileContent, object : ProgramAdapter.OnRemoveButtonClickListener {
             override fun onRemoveButtonClick(program: Program) {
+                // Supprime le programme de la liste
                 fileContent.remove(program)
+
+                // Réécrit la liste mise à jour dans le fichier
+                saveProgramsToFile(fileContent)
+
+                // Rafraîchit l'adaptateur pour refléter les changements
                 programAdapter.notifyDataSetChanged()
             }
         })
@@ -87,6 +94,23 @@ class Favorites : Fragment() {
         } catch (e: IOException) {
             e.printStackTrace()
             mutableListOf()
+        }
+    }
+
+    private fun saveProgramsToFile(programs: List<Program>) {
+        val filePath = "/data/data/com.example.workout/files/programs.json"
+        try {
+            val file = File(filePath)
+            val fileWriter = FileWriter(file)
+
+            val gson = Gson()
+            val jsonString = gson.toJson(programs)
+
+            fileWriter.write(jsonString)
+            fileWriter.close()
+
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 

@@ -62,7 +62,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
-                tools:listitem="@layout/recyclerview_favorites"
+                tools:listitem="@layout/card_workout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"

@@ -9,8 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.workout.R
 import com.example.workout.data.Program
-import com.example.workout.databinding.FragmentFavoritesBinding
-import com.example.workout.databinding.FragmentNewWorkoutBinding
 
 class ProgramAdapter(private val context: Context,
                      private var programs: MutableList<Program>,
