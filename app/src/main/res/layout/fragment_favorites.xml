@@ -58,29 +58,15 @@
                         android:textColorHint="?attr/colorPrimary"/>
 
                 </LinearLayout>
-
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/listeProgram"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                tools:listitem="@layout/recyclerview_favorites"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/rounded_card"
-                android:layout_marginTop="30dp"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:elevation="10dp">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view"
-                    tools:listitem="@layout/recyclerview_favorites"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scrollbars="vertical"/>
-
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:scrollbars="vertical"/>
         </LinearLayout>
     </ScrollView>
 </layout>

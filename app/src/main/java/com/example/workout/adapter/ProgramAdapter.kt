@@ -33,7 +33,7 @@ class ProgramAdapter(private val context: Context,
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
-            LayoutInflater.from(context).inflate(R.layout.recyclerview_favorites, parent, false)
+            LayoutInflater.from(context).inflate(R.layout.card_workout, parent, false)
         return ViewHolder(view)
     }
 
