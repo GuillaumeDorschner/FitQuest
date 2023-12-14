@@ -36,7 +36,7 @@ class ProgramAdapter(private val context: Context,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val program = filteredPrograms[position] // Utilisez filteredPrograms ici
+        val program = filteredPrograms[position]
         holder.keywordTextView.text = program.keyword.uppercase()
         holder.programTextView.text = program.program
 
@@ -47,12 +47,12 @@ class ProgramAdapter(private val context: Context,
     }
 
     override fun getItemCount(): Int {
-        return filteredPrograms.size // Utilisez filteredPrograms.size ici
+        return filteredPrograms.size
     }
 
     fun filter(keyword: String) {
         filteredPrograms = if (keyword.isEmpty()) {
-            programs // Si le mot-clé est vide, afficher la liste complète
+            programs
         }
         else {
             programs.filter { program ->
