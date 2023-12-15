@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val envVar: String = System.getenv("varname") ?: "default_value"
-        Log.d("ENV", "$envVar")
+        Log.d("dsfjskdh", "$envVar")
         
 
         val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
@@ -85,4 +85,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.selectedItemId = R.id.new_workout
     }
 
+    fun gotoHome(){
+        binding.bottomNav.selectedItemId = R.id.home
+    }
 }
