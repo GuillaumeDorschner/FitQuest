@@ -57,8 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:layout_marginBottom="20dp" >
+                android:orientation="horizontal" >
 
                 <include layout="@layout/card_calorie_intake"
                     android:layout_width="match_parent"
