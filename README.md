@@ -20,6 +20,7 @@ To get started, clone the repository from GitHub and switch to the newly created
 
 ```bash
 git clone https://github.com/GuillaumeDorschner/FitQuest.git
+cd FitQuest
 ```
 
 Then launch Android Studio. And open the project from the folder where you cloned it. And you're good to go!

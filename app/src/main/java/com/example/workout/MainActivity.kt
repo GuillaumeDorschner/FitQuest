@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val envVar: String = System.getenv("varname") ?: "default_value"
+        Log.d("ENV", "$envVar")
+        
+
         val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
         sharedPreferences.edit().putBoolean("isLiked", false).apply()
 
