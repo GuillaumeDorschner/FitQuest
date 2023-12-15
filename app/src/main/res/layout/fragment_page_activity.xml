@@ -31,9 +31,13 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <include layout="@layout/fragment_component_activity"
+           <!-- <include layout="@layout/fragment_component_activity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <include layout="@layout/fragment_component_activity"
+                android:layout_width="match_parent"                android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp" />
 
             <include layout="@layout/fragment_component_activity"
@@ -44,12 +48,7 @@
             <include layout="@layout/fragment_component_activity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp" />
-
-            <include layout="@layout/fragment_component_activity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp" />-->
 
         </LinearLayout>
     </ScrollView>
