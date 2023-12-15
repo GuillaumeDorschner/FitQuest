@@ -52,6 +52,7 @@ class New_Workout : Fragment() {
 
         binding.searchButton.setOnClickListener {
             sharedPreferences.edit().putBoolean("isLiked", false).apply()
+            updateHeartButton(false)
 
             val userInput = binding.inputUsr.text.toString()
 

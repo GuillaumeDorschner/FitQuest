@@ -14,6 +14,7 @@ import com.example.workout.fragments.*
 import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
+import io.github.cdimascio.dotenv.dotenv
 import User;
 import UserManagement
 
@@ -28,8 +29,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val envVar: String = System.getenv("varname") ?: "default_value"
-        Log.d("dsfjskdh", "$envVar")
         
 
         val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
