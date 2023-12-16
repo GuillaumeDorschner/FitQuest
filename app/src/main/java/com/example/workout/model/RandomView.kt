@@ -53,19 +53,24 @@ object RandomView {
             Pair(it, 1f + Random.nextFloat() * 6f) // Generates a random float between 1 and 7
         }
 
-        // Randomly generate donut data with new specified ranges
-        // Generate donutData3
-        donutData3 = Random.nextInt(1, 8001) // Range: 1 to 8000
+        // Constants
+        val MAX_DONUT2 = 8000
+        val MAX_DONUT1 = 56000
 
-        // Generate donutData2, ensuring it's greater than donutData3
-        donutData2 = Random.nextInt(donutData3, 8001) // Range: donutData3 to 8000
+        // Generate donutData3 (lowest walk value in a day)
+        donutData3 = Random.nextInt(1, MAX_DONUT2 + 1) // Range: 1 to 8000
 
-        // Calculate the sum of donutData2 and donutData3
-        val sumOfDonut2And3 = donutData2 + donutData3
+        // Generate donutData2 (highest walk value in a day), ensuring it's greater than donutData3
+        donutData2 = Random.nextInt(donutData3, MAX_DONUT2 + 1) // Range: donutData3 to 8000
 
-        // Generate donutData1, ensuring it's greater than the sum of donutData2 and donutData3
-        // The maximum value for donutData1 needs to be large enough to allow this condition
-        donutData1 = Random.nextInt(sumOfDonut2And3 + 1, 56001) // Range: sumOfDonut2And3 + 1 to 56000
+        // Calculate the minimum sum of donutData2 and donutData3
+        val minSumDonut2And3 = donutData2 + donutData3
+
+        // Generate donutData1 (total walk value for the week)
+        // Ensuring it's greater than the sum of donutData2 and donutData3
+        // Also ensuring logical distribution across the week
+        donutData1 = Random.nextInt(maxOf(minSumDonut2And3 + 1, 2 * donutData2), MAX_DONUT1 + 1) // Range: max(minSumDonut2And3 + 1, 2 * donutData2) to 56000
+
 
         // Select the first random day
          randomDay1 = daysOfWeekFull.random()
