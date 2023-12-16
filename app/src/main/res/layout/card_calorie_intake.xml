@@ -18,11 +18,11 @@
             android:id="@+id/textViewChartTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Walk"
+            android:text="Caloric intake"
             android:textSize="17sp"
             android:textStyle="bold"
             android:textColor="?attr/colorPrimary"
-            tools:text="Caloric intake" />
+             />
 
         <TextView
             android:id="@+id/textViewChartSubtitle"
@@ -88,16 +88,25 @@
                 android:gravity="center" />
         </LinearLayout>
 
-
-        <com.db.williamchart.view.LineChartView
-            android:id="@+id/lineChartView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="10dp"
-            app:chart_lineColor="@color/green"
-            app:chart_axis="none"
-            app:chart_smoothLine="true"
-            app:chart_lineThickness="2dp" />
+            android:layout_height="220dp"
+            android:orientation="horizontal"
+            android:gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+            <com.db.williamchart.view.LineChartView
+                android:id="@+id/lineChartView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                app:chart_axis="none"
+                app:chart_lineColor="@color/green"
+                app:chart_lineThickness="2dp"
+                app:chart_smoothLine="true" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </FrameLayout>

@@ -15,6 +15,7 @@ class WorkoutViewModel(private val apiService: ApiService) : ViewModel() {
     val workoutResponse = MutableLiveData<CurrentOpenIAResponse?>()
     val isLoading = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String?>()
+    val searchKeyword = MutableLiveData<String>()
 
     fun postWorkoutQuery(requestData: CurrentOpenIARequest) {
         isLoading.value = true

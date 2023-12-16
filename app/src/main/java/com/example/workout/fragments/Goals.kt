@@ -39,8 +39,7 @@ class Goals :Fragment(){
                         current.poids = weight
                         current.pas = steps
                         userManager.modifyUserByEmail(current)
-                        (activity as? MainActivity)?.replaceFragment(Profile())
-
+                        (requireActivity() as MainActivity).gotoHome()
                     } else {
                         binding.textView6.setText("Weight and Steps should be numbers")
                     }
