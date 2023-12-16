@@ -23,6 +23,8 @@ git clone https://github.com/GuillaumeDorschner/FitQuest.git
 cd FitQuest
 ```
 
+You need to put your OpenAI Key in the file `gradle.properties` in the root folder of the project.``
+
 Then launch Android Studio. And open the project from the folder where you cloned it. And you're good to go!
 
 ## Requirements
