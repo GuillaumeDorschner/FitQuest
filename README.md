@@ -39,7 +39,7 @@ You MUST have:
 - [x] A form to add some data to the api
 - [x] The app should work without internet
 - [x] Simulate a login with a sharedPreference
-- [] Tests
+- [ ] Tests
 
 Warning: you must take care of the thread and your app shouldn't crash
 
