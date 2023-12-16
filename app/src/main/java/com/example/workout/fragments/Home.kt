@@ -9,14 +9,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import java.util.Random;
 import com.db.williamchart.view.DonutChartView
 import com.db.williamchart.view.HorizontalBarChartView
 import com.example.workout.MainActivity
 import com.example.workout.R
 import com.example.workout.adapter.CardsPopularAdapter
-import com.example.workout.model.CardPopular
-import com.example.workout.model.RandomView
+import com.example.workout.data.RandomView
 
 class Home : Fragment() {
     override fun onCreateView(
@@ -40,7 +38,7 @@ class Home : Fragment() {
         }
 
         val horizontalBarChartData = listOf(
-            "pas" to 10000f,
+            "pas" to 8000f,
             "pas" to RandomView.barchartdatahome.toFloat()
         )
 

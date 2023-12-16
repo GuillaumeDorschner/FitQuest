@@ -1,7 +1,8 @@
-package com.example.workout.model
+package com.example.workout.data
 
 import kotlin.random.Random
 import com.example.workout.R
+import com.example.workout.model.CardPopular
 
 object RandomView {
     val trainingData: List<Pair<String, Float>>
@@ -31,7 +32,7 @@ object RandomView {
             CardPopular("Mike Mentzers", R.drawable.mike, "https://fr.wikipedia.org/wiki/Mike_Mentzer")
         )
 
-        barchartdatahome = Random.nextInt(1, 10000)
+        barchartdatahome = Random.nextInt(1, 8000)
 
 
         caloriesdatahome = Random.nextInt(1, 2000)
@@ -45,15 +46,14 @@ object RandomView {
 
         // Randomly generate training data
         trainingData = daysOfWeek.map {
-            Pair(it, Random.nextFloat() * 2) // Generates a random float between 0 and 2
+            Pair(it, 0.1f+Random.nextFloat() * 1.9f) // Generates a random float between 0.1 and 2
         }
 
         // Randomly generate caloric data
         caloricData = daysOfWeek.map {
-            Pair(it, 1f + Random.nextFloat() * 6f) // Generates a random float between 1 and 7
+            Pair(it, 2f + Random.nextFloat() * 5f) // Generates a random float between 2 and 6
         }
 
-        // Constants
         val MAX_DONUT2 = 8000
         val MAX_DONUT1 = 56000
 
@@ -63,13 +63,13 @@ object RandomView {
         // Generate donutData2 (highest walk value in a day), ensuring it's greater than donutData3
         donutData2 = Random.nextInt(donutData3, MAX_DONUT2 + 1) // Range: donutData3 to 8000
 
-        // Calculate the minimum sum of donutData2 and donutData3
-        val minSumDonut2And3 = donutData2 + donutData3
+        // Calculate a more realistic minimum for the total
+        // Assuming the other days are distributed between the highest and lowest values
+        val minTotal = donutData2 + 6*donutData3
 
         // Generate donutData1 (total walk value for the week)
-        // Ensuring it's greater than the sum of donutData2 and donutData3
-        // Also ensuring logical distribution across the week
-        donutData1 = Random.nextInt(maxOf(minSumDonut2And3 + 1, 2 * donutData2), MAX_DONUT1 + 1) // Range: max(minSumDonut2And3 + 1, 2 * donutData2) to 56000
+        donutData1 = Random.nextInt(minTotal, MAX_DONUT1 + 1) // Range: max(minTotal, 2 * donutData2) to 56000
+
 
 
         // Select the first random day
