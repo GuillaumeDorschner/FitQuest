@@ -36,8 +36,7 @@ class Login : Fragment() {
             var foundUser = userManager.GetUser(mail,password);
             if(foundUser!=null)
             {
-
-                (requireActivity() as MainActivity).replaceFragment(Home())
+                (requireActivity() as MainActivity).gotoHome()
             }
             else
             {

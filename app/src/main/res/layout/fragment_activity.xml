@@ -3,75 +3,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--    <data>
-            <variable
-                name="workoutViewModel"
-                //type="com.example.workout.viewmodel.jkqsdfhsdkjhf" />
-        </data>  -->
-
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
 
             <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:textColor="?attr/colorPrimary"
-                android:text="Statistic of the week"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginTop="50dp"
+            android:text="Statistic of the week"
+            android:textSize="29dp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
-
-            <include layout="@layout/card_training_time_statistics"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-       <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
-
-            <include
-                layout="@layout/card_walk_statistics"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-             <LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
-                <include layout="@layout/card_calorie_intake"
+                <include layout="@layout/card_training_time_statistics"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:layout_weight="1"/>
-            </LinearLayout>
+                    android:layout_weight="1" />
 
             </LinearLayout>
-        </ScrollView>
-    </layout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <include
+                    layout="@layout/card_walk_statistics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <include layout="@layout/card_calorie_intake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

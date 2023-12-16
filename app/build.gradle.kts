@@ -1,3 +1,7 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
+val openAiApiKey: String = gradleLocalProperties(rootDir).getProperty("OPENAI_API_KEY")
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -19,12 +23,16 @@ android {
     }
 
     buildTypes {
+        getByName("debug") {
+            buildConfigField("String", "OPENAI_API_KEY", "\"$openAiApiKey\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "OPENAI_API_KEY", "\"$openAiApiKey\"")
         }
     }
 
@@ -37,6 +45,7 @@ android {
     }
 
     buildFeatures {
+        buildConfig = true
         viewBinding = true
         dataBinding = true
     }
