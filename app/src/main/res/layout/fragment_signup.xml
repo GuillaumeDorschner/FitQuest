@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:layout_marginBottom="40dp"
         android:textSize="24sp" />
 
@@ -21,27 +22,30 @@
         android:id="@+id/editTextTextNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Nom"
+        android:hint="Name"
         android:textColor="#000000" />
 
     <EditText
         android:id="@+id/editTextPrenom"
         android:layout_width="wrap_content"
+        android:textColorHint="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Prénom"
+        android:hint="First Name"
         android:textColor="#000000" />
 
     <EditText
         android:id="@+id/editTextMail"
         android:layout_width="wrap_content"
+        android:textColorHint="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Mail"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         android:textColor="#000000" />
 
@@ -50,9 +54,10 @@
         android:id="@+id/editTextDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
         android:layout_marginBottom="20dp"
         android:ems="10"
-        android:hint="Date de naissance"
+        android:hint="Date of Birth"
         android:inputType="date"
         android:textColor="#000000" />
 
@@ -60,6 +65,7 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="@string/password"
@@ -69,6 +75,7 @@
     <EditText
         android:id="@+id/editTextTextPassword2"
         android:layout_width="wrap_content"
+        android:textColorHint="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
