@@ -74,4 +74,7 @@ dependencies {
     implementation ("com.diogobernardino:williamchart:3.11.0")
     implementation ("com.diogobernardino.williamchart:tooltip-slider:3.11.0")
     implementation ("com.diogobernardino.williamchart:tooltip-points:3.11.0")
+
+    //env
+    implementation ("io.github.cdimascio:dotenv-kotlin:6.4.1")
 }

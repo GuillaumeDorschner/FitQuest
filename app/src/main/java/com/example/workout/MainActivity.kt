@@ -14,6 +14,7 @@ import com.example.workout.fragments.*
 import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
+import io.github.cdimascio.dotenv.dotenv
 import User;
 import UserManagement
 
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         userManagement = UserManagement(applicationContext)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        
 
         val sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
         sharedPreferences.edit().putBoolean("isLiked", false).apply()
@@ -81,4 +84,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.selectedItemId = R.id.new_workout
     }
 
+    fun gotoHome(){
+        binding.bottomNav.selectedItemId = R.id.home
+    }
 }
