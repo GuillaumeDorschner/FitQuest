@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
+        android:textColorHint="@color/black"
         android:hint="Goal"
         android:textColor="#000000" />
 
@@ -32,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
+        android:textColorHint="@color/black"
         android:hint="Weight"
         android:textColor="#000000" />
     <EditText
@@ -39,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:textColorHint="@color/black"
         android:ems="10"
         android:hint="Walk /day"
         android:textColor="#000000" />
@@ -47,6 +50,7 @@
         android:id="@+id/editTraining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Hours of Training /week"
