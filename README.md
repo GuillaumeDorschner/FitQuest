@@ -4,7 +4,7 @@ FitQuest is an application designed to personalize your fitness journey. Whether
 
 ## Preview 📱
 
-video there
+https://github.com/GuillaumeDorschner/FitQuest/assets/44686652/a3e8a0f1-bf99-4375-b6fd-22ab94b3b8ec
 
 ## Desgin Figma
 
