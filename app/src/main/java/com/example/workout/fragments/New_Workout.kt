@@ -40,14 +40,23 @@ class New_Workout : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_new_workout, container, false)
         binding.workoutViewModel = viewModel
 
+        viewModel.searchKeyword.observe(viewLifecycleOwner) { keyword ->
+            if (!keyword.isNullOrEmpty()) {
+                binding.inputUsr.setText(keyword)
+            }
+        }
         
         sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
         val isLiked = sharedPreferences.getBoolean("isLiked", false)
         updateHeartButton(isLiked)
 
         binding.searchButton.setOnClickListener {
-            val isLiked = sharedPreferences.getBoolean("isLiked", false)
+            sharedPreferences.edit().putBoolean("isLiked", false).apply()
+            updateHeartButton(false)
+
             val userInput = binding.inputUsr.text.toString()
+
+            viewModel.searchKeyword.value = userInput
             val request = CurrentOpenIARequest(
                 model = "gpt-4",
                 messages = listOf(
