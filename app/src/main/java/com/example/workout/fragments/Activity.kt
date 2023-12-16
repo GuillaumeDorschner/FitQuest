@@ -36,20 +36,6 @@ class Activity : Fragment() {
         val chartDonut2 = view.findViewById<DonutChartView>(R.id.chartDonut2)
         val chartDonut3 = view.findViewById<DonutChartView>(R.id.chartDonut3)
 
-
-
-        // maximum value for full bar height.
-        val maxTrainingTime = 2f // 2 hours
-        val averageCalories = 2700f
-        val maxsteps = 56000f
-        val stepsday = 8000f
-
-
-        // Normalize the data to the maximum value for the bar height to represent it properly.
-        val normalizedChartData = RandomView.trainingData.map { (day, hours) ->
-            Pair(day, hours / maxTrainingTime) // Normalize the hours to the scale of 0.0 - 1.0 based on the maxTrainingTime.
-        }
-
         // setting up text views
         textView1.text = RandomView.donutData1.toString()
         textView3.text = RandomView.donutData2.toString()
@@ -62,24 +48,22 @@ class Activity : Fragment() {
 
         // Configurez et animez chaque DonutChart
         val colors = intArrayOf(Color.parseColor("#9FEC00"), Color.parseColor("#D9D9D9"))
-        val normalizedDonutData1 = (RandomView.donutData1 / maxsteps) * 100
-        val normalizedDonutData2 = (RandomView.donutData2 / stepsday) * 100
-        val normalizedDonutData3 = (RandomView.donutData3 / stepsday) * 100
         chartDonut1.donutColors = colors
         chartDonut1.animation.duration = 1000L
-        chartDonut1.animate(listOf(normalizedDonutData1, 100f - normalizedDonutData1))
+        chartDonut1.animate(listOf(RandomView.normalizedDonutData1, 100f - RandomView.normalizedDonutData1))
+
 
         chartDonut2.donutColors = colors
         chartDonut2.animation.duration = 1000L
-        chartDonut2.animate(listOf(normalizedDonutData2, 100f - normalizedDonutData2))
+        chartDonut2.animate(listOf(RandomView.normalizedDonutData2, 100f - RandomView.normalizedDonutData2))
 
         chartDonut3.donutColors = colors
         chartDonut3.animation.duration = 1000L
-        chartDonut3.animate(listOf(normalizedDonutData3, 100f - normalizedDonutData3))
+        chartDonut3.animate(listOf(RandomView.normalizedDonutData3, 100f - RandomView.normalizedDonutData3))
 
         // Show the normalized chart data.
         chart.animation.duration = 1000L
-        chart.animate(normalizedChartData)
+        chart.animate(RandomView.normalizedTrainingData)
         lineChart.animation.duration = 1000L
         lineChart.animate(RandomView.caloricData)
 

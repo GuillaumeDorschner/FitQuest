@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.util.Random;
 import com.db.williamchart.view.DonutChartView
@@ -15,6 +16,7 @@ import com.example.workout.MainActivity
 import com.example.workout.R
 import com.example.workout.adapter.CardsPopularAdapter
 import com.example.workout.model.CardPopular
+import com.example.workout.model.RandomView
 
 class Home : Fragment() {
     override fun onCreateView(
@@ -23,13 +25,13 @@ class Home : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val textView4 : TextView = view.findViewById(R.id.textView4)
+        val textView5 : TextView = view.findViewById(R.id.textViewWalk)
+        val textView6 : TextView = view.findViewById(R.id.caloriesTextView)
+        textView4.text = RandomView.donutdatahome.toString()
+        textView5.text = RandomView.barchartdatahome.toString()
+        textView6.text = RandomView.caloriesdatahome.toString()
 
-        val cardsList = listOf(
-            CardPopular("Cbum", R.drawable.cbum, "https://www.instagram.com/cbum/"),
-            CardPopular("Tibo Inshape", R.drawable.tibo, "https://www.youtube.com/user/OutLawzFR"),
-            CardPopular("Arnold", R.drawable.arnold, "https://fr.wikipedia.org/wiki/Arnold_Schwarzenegger"),
-            CardPopular("Mike Mentzers", R.drawable.mike, "https://fr.wikipedia.org/wiki/Mike_Mentzer"),
-        )
 
         val button = view.findViewById<Button>(R.id.button5)
 
@@ -37,31 +39,29 @@ class Home : Fragment() {
             (requireActivity() as MainActivity).gotoNewWorkOut()
         }
 
-        val chart = view.findViewById<HorizontalBarChartView>(R.id.chart)
-
-        val items = listOf(
-            "pas" to 100F,
-            "pas" to Random().nextFloat() * 100
+        val horizontalBarChartData = listOf(
+            "pas" to 10000f,
+            "pas" to RandomView.barchartdatahome.toFloat()
         )
 
+        val chart = view.findViewById<HorizontalBarChartView>(R.id.chart)
         chart.animation.duration = 1000L
-        chart.animate(items)
+        chart.animate(horizontalBarChartData)
+
+        val donutChartDatalist = listOf(
+            RandomView.normalizeddonutdatahome,
+            100f - RandomView.normalizeddonutdatahome
+        )
 
         val donutchart = view.findViewById<DonutChartView>(R.id.chartDonut)
-
-        val donutSet = listOf(
-            Random().nextFloat() * 100,
-            0F
-        )
-
         donutchart.donutColors = intArrayOf(
             Color.parseColor("#9FEC00"),
             Color.parseColor("#D9D9D9")
         )
         donutchart.animation.duration = 1000L
-        donutchart.animate(donutSet)
+        donutchart.animate(donutChartDatalist)
 
-        val adapter = CardsPopularAdapter(requireContext(), cardsList)
+        val adapter = CardsPopularAdapter(requireContext(), RandomView.cardPopularList)
         view.findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter
 
         return view
