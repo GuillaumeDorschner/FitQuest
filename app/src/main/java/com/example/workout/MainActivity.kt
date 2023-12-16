@@ -14,8 +14,6 @@ import com.example.workout.fragments.*
 import com.example.workout.networking.ApiConfig
 import com.example.workout.viewmodel.WorkoutViewModel
 import com.example.workout.viewmodel.WorkoutViewModelFactory
-import io.github.cdimascio.dotenv.dotenv
-import User;
 import UserManagement
 
 class MainActivity : AppCompatActivity() {

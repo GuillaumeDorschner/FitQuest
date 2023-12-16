@@ -5,11 +5,14 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import com.example.workout.BuildConfig
 
 class ApiConfig {
 
     companion object {
         fun getApiService(): ApiService {
+
+            val apiKey = BuildConfig.OPENAI_API_KEY
 
             val loggingInterceptor = HttpLoggingInterceptor()
                 .setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -20,7 +23,7 @@ class ApiConfig {
                 .addInterceptor { chain ->
                     val original = chain.request()
                     val requestBuilder = original.newBuilder()
-                        .header("Authorization", "Bearer " + "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")
+                        .header("Authorization", "Bearer " + apiKey)
                     val request = requestBuilder.build()
                     chain.proceed(request)
                 }
